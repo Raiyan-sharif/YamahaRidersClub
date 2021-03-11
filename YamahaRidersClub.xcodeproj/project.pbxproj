@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1C173A25FA9B67008FF687 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* loginModel.swift */; };
 		1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */; };
 		1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */; };
 		1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		1BAA6C1725FA0F3F0050EDE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA6C1525FA0F3F0050EDE0 /* LaunchScreen.storyboard */; };
 		1BAA6C2225FA0F3F0050EDE0 /* YamahaRidersClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2125FA0F3F0050EDE0 /* YamahaRidersClubTests.swift */; };
 		1BAA6C2D25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */; };
+		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1C173925FA9B67008FF687 /* loginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
 		1BAA6C0425FA0F3C0050EDE0 /* YamahaRidersClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YamahaRidersClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		1BAA6C2825FA0F3F0050EDE0 /* YamahaRidersClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YamahaRidersClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamahaRidersClubUITests.swift; sourceTree = "<group>"; };
 		1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		1BAA6C0625FA0F3C0050EDE0 /* YamahaRidersClub */ = {
 			isa = PBXGroup;
 			children = (
+				1BAA6C4325FA94410050EDE0 /* Models */,
+				1BAA6C3D25FA93A00050EDE0 /* Services */,
 				1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */,
 				1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */,
 				1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */,
@@ -129,6 +135,22 @@
 				1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */,
 			);
 			path = YamahaRidersClubUITests;
+			sourceTree = "<group>";
+		};
+		1BAA6C3D25FA93A00050EDE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1BAA6C4325FA94410050EDE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B1C173925FA9B67008FF687 /* loginModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +285,10 @@
 			files = (
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
+				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
+				1B1C173A25FA9B67008FF687 /* loginModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66MXJKH4WQ;
+				DEVELOPMENT_TEAM = DXFMNDCK63;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66MXJKH4WQ;
+				DEVELOPMENT_TEAM = DXFMNDCK63;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
