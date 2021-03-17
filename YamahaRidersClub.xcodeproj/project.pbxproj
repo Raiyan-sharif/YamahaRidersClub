@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B1C173A25FA9B67008FF687 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* loginModel.swift */; };
+		1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* LoginModel.swift */; };
+		1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174025FF26EC008FF687 /* HomeViewController.swift */; };
+		1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174525FF281A008FF687 /* MenuViewController.swift */; };
+		1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174A25FF3B06008FF687 /* MenuTitleTableViewCell.swift */; };
+		1B1C175025FF3B4E008FF687 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174F25FF3B4E008FF687 /* MenuItemTableViewCell.swift */; };
+		1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175525FF3E31008FF687 /* MenuListItem.swift */; };
+		1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */; };
+		1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C176025FF7D61008FF687 /* SlideInTransition.swift */; };
 		1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */; };
 		1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */; };
 		1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */; };
@@ -18,6 +25,8 @@
 		1BAA6C2225FA0F3F0050EDE0 /* YamahaRidersClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2125FA0F3F0050EDE0 /* YamahaRidersClubTests.swift */; };
 		1BAA6C2D25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */; };
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
+		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
+		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B1C173925FA9B67008FF687 /* loginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
+		1B1C173925FA9B67008FF687 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		1B1C174025FF26EC008FF687 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1B1C174525FF281A008FF687 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		1B1C174A25FF3B06008FF687 /* MenuTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTitleTableViewCell.swift; sourceTree = "<group>"; };
+		1B1C174F25FF3B4E008FF687 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		1B1C175525FF3E31008FF687 /* MenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
+		1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSelectMenuItemOption.swift; sourceTree = "<group>"; };
+		1B1C176025FF7D61008FF687 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		1BAA6C0425FA0F3C0050EDE0 /* YamahaRidersClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YamahaRidersClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +71,8 @@
 		1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamahaRidersClubUITests.swift; sourceTree = "<group>"; };
 		1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1C175425FF3DC7008FF687 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1B1C175525FF3E31008FF687 /* MenuListItem.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		1B1C175F25FF7D15008FF687 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1B1C176025FF7D61008FF687 /* SlideInTransition.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		1BAA6BFB25FA0F3C0050EDE0 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +139,8 @@
 		1BAA6C0625FA0F3C0050EDE0 /* YamahaRidersClub */ = {
 			isa = PBXGroup;
 			children = (
+				1B1C175F25FF7D15008FF687 /* Features */,
+				1B1C175425FF3DC7008FF687 /* Menu */,
 				1BAA6C4325FA94410050EDE0 /* Models */,
 				1BAA6C3D25FA93A00050EDE0 /* Services */,
 				1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */,
@@ -115,6 +151,11 @@
 				1BAA6C1525FA0F3F0050EDE0 /* LaunchScreen.storyboard */,
 				1BAA6C1825FA0F3F0050EDE0 /* Info.plist */,
 				1BAA6C1025FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld */,
+				1B1C174025FF26EC008FF687 /* HomeViewController.swift */,
+				1B1C174525FF281A008FF687 /* MenuViewController.swift */,
+				1B1C174A25FF3B06008FF687 /* MenuTitleTableViewCell.swift */,
+				1B1C174F25FF3B4E008FF687 /* MenuItemTableViewCell.swift */,
+				1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */,
 			);
 			path = YamahaRidersClub;
 			sourceTree = "<group>";
@@ -148,7 +189,9 @@
 		1BAA6C4325FA94410050EDE0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1B1C173925FA9B67008FF687 /* loginModel.swift */,
+				1B1C173925FA9B67008FF687 /* LoginModel.swift */,
+				1BEC5F6D2602928300664EA6 /* LoginData.swift */,
+				1BEC5F72260292D200664EA6 /* LoginManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,12 +326,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */,
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
+				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
-				1B1C173A25FA9B67008FF687 /* loginModel.swift in Sources */,
+				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
+				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,
+				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
+				1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */,
+				1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */,
+				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
+				1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */,
+				1B1C175025FF3B4E008FF687 /* MenuItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
