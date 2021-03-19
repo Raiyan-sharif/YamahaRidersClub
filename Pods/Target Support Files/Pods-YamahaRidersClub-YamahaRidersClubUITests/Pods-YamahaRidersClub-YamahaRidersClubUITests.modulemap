@@ -1,0 +1,6 @@
+framework module Pods_YamahaRidersClub_YamahaRidersClubUITests {
+  umbrella header "Pods-YamahaRidersClub-YamahaRidersClubUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

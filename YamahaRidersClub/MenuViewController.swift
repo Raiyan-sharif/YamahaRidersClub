@@ -8,29 +8,60 @@
 import UIKit
 
 class MenuViewController: UITableViewController {
+    var didTapMenuType: ((DidSelectMenuItemOption) -> Void)?
+    
     var menuItemList: [MenuListItem] = [MenuListItem(image: "person.fill", itemName: "My Profile"),
-                                        MenuListItem(image: "person.fill", itemName: "News Feed"),
-                                        MenuListItem(image: "person.fill", itemName: "Products"),
-                                        MenuListItem(image: "person.fill", itemName: "Offer"),
-                                        MenuListItem(image: "person.fill", itemName: "Parts"),
-                                        MenuListItem(image: "person.fill", itemName: "Dealer"),
-                                        MenuListItem(image: "person.fill", itemName: "QR Scanner"),
-                                        MenuListItem(image: "person.fill", itemName: "Events"),
-                                        MenuListItem(image: "person.fill", itemName: "Tricks & Tips"),
-                                        MenuListItem(image: "person.fill", itemName: "New Ride"),
-                                        MenuListItem(image: "person.fill", itemName: "My Ride"),
-                                        MenuListItem(image: "person.fill", itemName: "Weather"),
-                                        MenuListItem(image: "person.fill", itemName: "Log out"),
-                                        MenuListItem(image: "person.fill", itemName: "About")]
+                                        MenuListItem(image: "radiowaves.right", itemName: "News Feed"),
+                                        MenuListItem(image: "cart", itemName: "Products"),
+                                        MenuListItem(image: "archivebox", itemName: "Offer"),
+                                        MenuListItem(image: "books.vertical", itemName: "Parts"),
+                                        MenuListItem(image: "giftcard.fill", itemName: "Dealer"),
+                                        MenuListItem(image: "scanner", itemName: "QR Scanner"),
+                                        MenuListItem(image: "video.bubble.left", itemName: "Events"),
+                                        MenuListItem(image: "mappin.and.ellipse", itemName: "Tricks & Tips"),
+                                        MenuListItem(image: "map", itemName: "New Ride"),
+                                        MenuListItem(image: "bicycle", itemName: "My Ride"),
+                                        MenuListItem(image: "wind", itemName: "Weather"),
+                                        MenuListItem(image: "power", itemName: "Log out"),
+                                        MenuListItem(image: "info", itemName: "About")]
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
         
         
     }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
 
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+
+            switch swipeGesture.direction {
+            case .right:
+                print("Swiped right")
+                dismiss(animated: true)
+            case .down:
+                print("Swiped down")
+            case .left:
+                print("Swiped left")
+                dismiss(animated: true)
+            case .up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
+    }
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,6 +72,7 @@ class MenuViewController: UITableViewController {
 //        return "Hello"
 //    }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let menuType = DidSelectMenuItemOption(rawValue: indexPath.row-1) else {
             return
@@ -48,11 +80,16 @@ class MenuViewController: UITableViewController {
         dismiss(animated: true){
             
             print("Dismissing on click \(menuType) \(indexPath.row-1)")
+            self.didTapMenuType?(menuType)
             
+//            //WeatherViewController
+//            if indexPath.row == 12{
+//                print("ok")
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "WeatherViewController" ) as! WeatherViewController
+//                self.navigationController?.topViewController?.addChild(vc)
+////                self.getToWeatherPage()
+//            }
             
-            if(menuType.rawValue == DidSelectMenuItemOption.Logout.rawValue){
-                
-            }
         }
     }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate{
 
     var userInputMobileNo: String = ""
     var userInputPassword:String = ""
@@ -20,10 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorMessagelebel: UILabel!
     
     var userManager = LoginManager()
+    var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Login"
         userManager.delegate = self
         
         mobileNoTF.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
         passwordTF.layer.cornerRadius = 14.0
         passwordTF.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        mobileNoTF.delegate = self
+        passwordTF.delegate = self
         
         signUpLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -54,7 +57,31 @@ class ViewController: UIViewController {
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(ViewController.forgotPasswordTapped))
         forgetPasswordLabel.isUserInteractionEnabled = true
         forgetPasswordLabel.addGestureRecognizer(tap2)
+        goToHomePage()
         // Do any additional setup after loading the view.
+    }
+    func goToHomePage(){
+        let loginStatus = userDefaults.bool(forKey: "isloggedIn")
+        if userDefaults.string(forKey: "mobileno") != nil && loginStatus == true{
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//            let testVc = storyboard?.instantiateViewController(identifier: "WeatherViewController") as! WeatherViewController
+             
+             navigationController?.pushViewController(vc,
+             animated: false)
+//            guard let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") else {return}
+//            
+//        
+//            present(homeViewController, animated: false)
+            
+        }
+        
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -71,6 +98,7 @@ class ViewController: UIViewController {
         else{
             userManager.fetchUser(mobileno: userInputMobileNo, password: userInputPassword)
         }
+        
         
     }
     
@@ -98,8 +126,13 @@ extension ViewController: LoginManagerDelegate{
             else{
                 self.errorMessagelebel.text = "Correct"
                 self.errorMessagelebel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                self.userDefaults.setValue(true, forKey: "isloggedIn")
+                self.userDefaults.setValue(user.mobileno, forKey: "mobileno")
+                self.userDefaults.setValue(self.userInputPassword, forKey: "password")
+                self.goToHomePage()
             }
         }
+        
     }
     
     func didFailWithError(error: Error) {
@@ -111,4 +144,6 @@ extension ViewController: LoginManagerDelegate{
     
     
 }
+
+
 

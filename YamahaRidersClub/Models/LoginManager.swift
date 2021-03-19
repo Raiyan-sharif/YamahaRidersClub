@@ -13,7 +13,8 @@ protocol LoginManagerDelegate {
 }
 
 struct LoginManager{
-    let loginURL = "https://apps.acibd.com/apps/yrc/riderinfo/loginservice?"
+    var loginURL = "https://apps.acibd.com/apps/yrc/riderinfo/loginservice?"
+//    var eventsURL = "https://apps.acibd.com/apps/yrc/syncdata/articalsync?articaltype=1&start=0&end=10"
     var delegate: LoginManagerDelegate?
     func fetchUser(mobileno: String, password: String){
         //mobileno=01755939896&password=1234
@@ -34,9 +35,9 @@ struct LoginManager{
                 
                 if let safeData = data{
 //                    let dataString = String(data: safeData, encoding: .utf8)
-                    if let weather = self.parseJSON(userData: safeData){
+                    if let user = self.parseJSON(userData: safeData){
 //                        let weatherVC = WeatherViewController()
-                        self.delegate?.didLogin(self, user: weather)
+                        self.delegate?.didLogin(self, user: user)
                     }
 //                    print(dataString)
                     
@@ -69,4 +70,6 @@ struct LoginManager{
             return nil
         }
     }
+    
+    
 }

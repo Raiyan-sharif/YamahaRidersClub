@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175525FF3E31008FF687 /* MenuListItem.swift */; };
 		1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */; };
 		1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C176025FF7D61008FF687 /* SlideInTransition.swift */; };
+		1B1D76D8260402540024B504 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D76D7260402540024B504 /* Camera.storyboard */; };
 		1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */; };
 		1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */; };
 		1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */; };
@@ -27,6 +28,18 @@
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
+		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
+		1BEC5F7E2602BB6400664EA6 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F7D2602BB6400664EA6 /* ArticleModel.swift */; };
+		1BEC5F8B2602BCED00664EA6 /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F8A2602BCED00664EA6 /* ArticleManager.swift */; };
+		1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F8F2602D5E200664EA6 /* ArticleData.swift */; };
+		1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FBE2603C5A900664EA6 /* ProfileViewController.swift */; };
+		1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FC62603F44800664EA6 /* WeatherViewController.swift */; };
+		1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */; };
+		1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FD02603F4E200664EA6 /* WeatherData.swift */; };
+		1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FD52603F50400664EA6 /* WeatherModel.swift */; };
+		76D2697AADDCA2C271C8924A /* Pods_YamahaRidersClubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25ECA0D90A781BF2673F8290 /* Pods_YamahaRidersClubTests.framework */; };
+		7D8AB942B6D60DBDC1B41278 /* Pods_YamahaRidersClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE346B96E2ACE6BCF26C2A27 /* Pods_YamahaRidersClub.framework */; };
+		926B61BD3C4B562B0D05729B /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908FCF697FD76C0350753CB8 /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +68,7 @@
 		1B1C175525FF3E31008FF687 /* MenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSelectMenuItemOption.swift; sourceTree = "<group>"; };
 		1B1C176025FF7D61008FF687 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		1B1D76D7260402540024B504 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1BAA6C0425FA0F3C0050EDE0 /* YamahaRidersClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YamahaRidersClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +87,24 @@
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
+		1BEC5F7D2602BB6400664EA6 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		1BEC5F8A2602BCED00664EA6 /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
+		1BEC5F8F2602D5E200664EA6 /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
+		1BEC5FBE2603C5A900664EA6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1BEC5FC62603F44800664EA6 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		1BEC5FD02603F4E200664EA6 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		1BEC5FD52603F50400664EA6 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		25ECA0D90A781BF2673F8290 /* Pods_YamahaRidersClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YamahaRidersClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30465FA0EB2CCE6855A7D028 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5687E5E4DD99F9B971E5174D /* Pods-YamahaRidersClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub.release.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub.release.xcconfig"; sourceTree = "<group>"; };
+		79D5F9F1CA47421540422D23 /* Pods-YamahaRidersClubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClubTests.debug.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClubTests/Pods-YamahaRidersClubTests.debug.xcconfig"; sourceTree = "<group>"; };
+		908FCF697FD76C0350753CB8 /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YamahaRidersClub_YamahaRidersClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A579F14FCCC93863C0C1F4BE /* Pods-YamahaRidersClubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClubTests.release.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClubTests/Pods-YamahaRidersClubTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE346B96E2ACE6BCF26C2A27 /* Pods_YamahaRidersClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YamahaRidersClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA999A3A801BBA756350A742 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub-YamahaRidersClubUITests.release.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDB19E0B344F5A362D2216E7 /* Pods-YamahaRidersClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub.debug.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D8AB942B6D60DBDC1B41278 /* Pods_YamahaRidersClub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D2697AADDCA2C271C8924A /* Pods_YamahaRidersClubTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926B61BD3C4B562B0D05729B /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +151,14 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		1B1D76D6260402340024B504 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B1D76D7260402540024B504 /* Camera.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1BAA6BFB25FA0F3C0050EDE0 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +166,8 @@
 				1BAA6C2025FA0F3F0050EDE0 /* YamahaRidersClubTests */,
 				1BAA6C2B25FA0F3F0050EDE0 /* YamahaRidersClubUITests */,
 				1BAA6C0525FA0F3C0050EDE0 /* Products */,
+				A045A324C34D44B51DD050EC /* Pods */,
+				6670804D7F99B8CDC7D0D19B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +184,8 @@
 		1BAA6C0625FA0F3C0050EDE0 /* YamahaRidersClub */ = {
 			isa = PBXGroup;
 			children = (
+				1B1D76D6260402340024B504 /* Views */,
+				1BEC5F772602B26100664EA6 /* Controllers */,
 				1B1C175F25FF7D15008FF687 /* Features */,
 				1B1C175425FF3DC7008FF687 /* Menu */,
 				1BAA6C4325FA94410050EDE0 /* Models */,
@@ -192,8 +239,47 @@
 				1B1C173925FA9B67008FF687 /* LoginModel.swift */,
 				1BEC5F6D2602928300664EA6 /* LoginData.swift */,
 				1BEC5F72260292D200664EA6 /* LoginManager.swift */,
+				1BEC5F7D2602BB6400664EA6 /* ArticleModel.swift */,
+				1BEC5F8A2602BCED00664EA6 /* ArticleManager.swift */,
+				1BEC5F8F2602D5E200664EA6 /* ArticleData.swift */,
+				1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */,
+				1BEC5FD02603F4E200664EA6 /* WeatherData.swift */,
+				1BEC5FD52603F50400664EA6 /* WeatherModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1BEC5F772602B26100664EA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */,
+				1BEC5FBE2603C5A900664EA6 /* ProfileViewController.swift */,
+				1BEC5FC62603F44800664EA6 /* WeatherViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6670804D7F99B8CDC7D0D19B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE346B96E2ACE6BCF26C2A27 /* Pods_YamahaRidersClub.framework */,
+				908FCF697FD76C0350753CB8 /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework */,
+				25ECA0D90A781BF2673F8290 /* Pods_YamahaRidersClubTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A045A324C34D44B51DD050EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDB19E0B344F5A362D2216E7 /* Pods-YamahaRidersClub.debug.xcconfig */,
+				5687E5E4DD99F9B971E5174D /* Pods-YamahaRidersClub.release.xcconfig */,
+				30465FA0EB2CCE6855A7D028 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig */,
+				FA999A3A801BBA756350A742 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.release.xcconfig */,
+				79D5F9F1CA47421540422D23 /* Pods-YamahaRidersClubTests.debug.xcconfig */,
+				A579F14FCCC93863C0C1F4BE /* Pods-YamahaRidersClubTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +289,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BAA6C3125FA0F3F0050EDE0 /* Build configuration list for PBXNativeTarget "YamahaRidersClub" */;
 			buildPhases = (
+				8852D1381C24877517896D82 /* [CP] Check Pods Manifest.lock */,
 				1BAA6C0025FA0F3C0050EDE0 /* Sources */,
 				1BAA6C0125FA0F3C0050EDE0 /* Frameworks */,
 				1BAA6C0225FA0F3C0050EDE0 /* Resources */,
+				2C5C0A06F547146864CCEC14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +308,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BAA6C3425FA0F3F0050EDE0 /* Build configuration list for PBXNativeTarget "YamahaRidersClubTests" */;
 			buildPhases = (
+				FAB7045DB51665B78BCD5CEC /* [CP] Check Pods Manifest.lock */,
 				1BAA6C1925FA0F3F0050EDE0 /* Sources */,
 				1BAA6C1A25FA0F3F0050EDE0 /* Frameworks */,
 				1BAA6C1B25FA0F3F0050EDE0 /* Resources */,
@@ -238,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BAA6C3725FA0F3F0050EDE0 /* Build configuration list for PBXNativeTarget "YamahaRidersClubUITests" */;
 			buildPhases = (
+				5D459FFA2B72B7A6F56FEE29 /* [CP] Check Pods Manifest.lock */,
 				1BAA6C2425FA0F3F0050EDE0 /* Sources */,
 				1BAA6C2525FA0F3F0050EDE0 /* Frameworks */,
 				1BAA6C2625FA0F3F0050EDE0 /* Resources */,
+				9D63C4A79477ECB65984F1DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +393,7 @@
 				1BAA6C1725FA0F3F0050EDE0 /* LaunchScreen.storyboard in Resources */,
 				1BAA6C1425FA0F3F0050EDE0 /* Assets.xcassets in Resources */,
 				1BAA6C0F25FA0F3C0050EDE0 /* Main.storyboard in Resources */,
+				1B1D76D8260402540024B504 /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +413,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C5C0A06F547146864CCEC14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D459FFA2B72B7A6F56FEE29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YamahaRidersClub-YamahaRidersClubUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8852D1381C24877517896D82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YamahaRidersClub-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D63C4A79477ECB65984F1DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB7045DB51665B78BCD5CEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YamahaRidersClubTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1BAA6C0025FA0F3C0050EDE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -328,18 +523,27 @@
 			files = (
 				1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */,
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
+				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
+				1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
+				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
 				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,
+				1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */,
 				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
+				1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */,
+				1BEC5F8B2602BCED00664EA6 /* ArticleManager.swift in Sources */,
+				1BEC5F7E2602BB6400664EA6 /* ArticleModel.swift in Sources */,
 				1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */,
+				1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */,
 				1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */,
 				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
 				1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */,
+				1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */,
 				1B1C175025FF3B4E008FF687 /* MenuItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,18 +717,21 @@
 		};
 		1BAA6C3225FA0F3F0050EDE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDB19E0B344F5A362D2216E7 /* Pods-YamahaRidersClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DXFMNDCK63;
+				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.project2.YamahaRidersClub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -532,18 +739,21 @@
 		};
 		1BAA6C3325FA0F3F0050EDE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5687E5E4DD99F9B971E5174D /* Pods-YamahaRidersClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DXFMNDCK63;
+				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.project2.YamahaRidersClub;
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -551,6 +761,7 @@
 		};
 		1BAA6C3525FA0F3F0050EDE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D5F9F1CA47421540422D23 /* Pods-YamahaRidersClubTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -573,6 +784,7 @@
 		};
 		1BAA6C3625FA0F3F0050EDE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A579F14FCCC93863C0C1F4BE /* Pods-YamahaRidersClubTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -595,6 +807,7 @@
 		};
 		1BAA6C3825FA0F3F0050EDE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30465FA0EB2CCE6855A7D028 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +828,7 @@
 		};
 		1BAA6C3925FA0F3F0050EDE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA999A3A801BBA756350A742 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
