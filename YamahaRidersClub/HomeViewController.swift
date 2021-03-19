@@ -14,6 +14,8 @@ class HomeViewController: UIViewController{
     let transition = SlideInTransition()
     @IBOutlet weak var ItemMenuIcon: UIBarButtonItem!
     
+    var userDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationItem.hidesBackButton = true
@@ -30,10 +32,48 @@ class HomeViewController: UIViewController{
                 }
             }
         }
+        fetchDataForProfile()
         
     }
     
-    
+    func fetchDataForProfile(){
+        DispatchQueue.main.async {
+            print(ConstantSring.baseURLRiderProfile+"?MobileNo="+self.userDefaults.string(forKey: "mobileno")!)
+            AF.request(ConstantSring.baseURLRiderProfile+"?MobileNo="+self.userDefaults.string(forKey: "mobileno")!).responseJSON { (response) in
+                switch response.result{
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    if json["success"] == 1{
+                        UserInfo.baseurl = json["baseurl"].string
+                        UserInfo.message = json["message"].string
+                        UserInfo.chassisNo = json["data"][0]["ChassisNo"].string
+                        UserInfo.registrationNo = json["data"][0]["RegistrationNo"].string
+                        UserInfo.avgSpeed = json["data"][0]["AvgSpeed"].string
+                        UserInfo.maxSpeed = json["data"][0]["MaxSpeed"].string
+                        UserInfo.bloodGroup = json["data"][0]["BloodGroup"].string
+                        UserInfo.engineNo = json["data"][0]["EngineNo"].string
+                        UserInfo.facebookIDLink = json["data"][0]["FacebookIdLink"].string
+                        UserInfo.drivingLicense = json["data"][0]["DrivingLicense"].string
+                        UserInfo.coverPhoto = json["data"][0]["CoverPhoto"].string
+                        UserInfo.brandName = json["data"][0]["BrandName"].string
+                        UserInfo.picture = json["data"][0]["Picture"].string
+                        UserInfo.mobileno = json["data"][0]["Mobileno"].string
+                        UserInfo.name = json["data"][0]["Name"].string
+                        UserInfo.dateOfBirth = json["data"][0]["DateOfBirth"].string
+                        UserInfo.nid = json["data"][0]["NID"].string
+                        UserInfo.bikeModel = json["data"][0]["BikeModel"].string
+                        UserInfo.memberDays = json["data"][0]["MemberDays"].string
+                    }
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
+            
+            }
+        }
+    }
     
     func gotToWeatherPage(){
         let vc = storyboard?.instantiateViewController(withIdentifier: "WeatherViewController" ) as! WeatherViewController
@@ -41,6 +81,7 @@ class HomeViewController: UIViewController{
          navigationController?.pushViewController(vc,
          animated: true)
     }
+    
     
     @IBAction func didTapHomeMenu(_ sender: UIBarButtonItem) {
         
@@ -66,6 +107,12 @@ class HomeViewController: UIViewController{
             topView = vc.view
             self.view.addSubview(topView!)
 //            gotToWeatherPage()
+        case .MyPrifile:
+            //ProfileViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController" ) as! ProfileViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
+            
         default:
             dismiss(animated: false, completion: nil)
         }

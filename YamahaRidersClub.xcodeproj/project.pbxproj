@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0BFDBF260540D600939FBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDBE260540D500939FBA /* Constants.swift */; };
+		1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDC326054A9E00939FBA /* UserInfo.swift */; };
 		1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* LoginModel.swift */; };
 		1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174025FF26EC008FF687 /* HomeViewController.swift */; };
 		1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174525FF281A008FF687 /* MenuViewController.swift */; };
@@ -15,7 +17,6 @@
 		1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175525FF3E31008FF687 /* MenuListItem.swift */; };
 		1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */; };
 		1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C176025FF7D61008FF687 /* SlideInTransition.swift */; };
-		1B1D76D8260402540024B504 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1D76D7260402540024B504 /* Camera.storyboard */; };
 		1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */; };
 		1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */; };
 		1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B0BFDBE260540D500939FBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B0BFDC326054A9E00939FBA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1B1C173925FA9B67008FF687 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1B1C174025FF26EC008FF687 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1B1C174525FF281A008FF687 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		1B1C175525FF3E31008FF687 /* MenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSelectMenuItemOption.swift; sourceTree = "<group>"; };
 		1B1C176025FF7D61008FF687 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
-		1B1D76D7260402540024B504 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1BAA6C0425FA0F3C0050EDE0 /* YamahaRidersClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YamahaRidersClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0BFDBD260540BE00939FBA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1B0BFDBE260540D500939FBA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		1B1C175425FF3DC7008FF687 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +164,6 @@
 		1B1D76D6260402340024B504 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B1D76D7260402540024B504 /* Camera.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 		1BAA6C0625FA0F3C0050EDE0 /* YamahaRidersClub */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BFDBD260540BE00939FBA /* Constants */,
 				1B1D76D6260402340024B504 /* Views */,
 				1BEC5F772602B26100664EA6 /* Controllers */,
 				1B1C175F25FF7D15008FF687 /* Features */,
@@ -245,6 +255,7 @@
 				1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */,
 				1BEC5FD02603F4E200664EA6 /* WeatherData.swift */,
 				1BEC5FD52603F50400664EA6 /* WeatherModel.swift */,
+				1B0BFDC326054A9E00939FBA /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,7 +404,6 @@
 				1BAA6C1725FA0F3F0050EDE0 /* LaunchScreen.storyboard in Resources */,
 				1BAA6C1425FA0F3F0050EDE0 /* Assets.xcassets in Resources */,
 				1BAA6C0F25FA0F3C0050EDE0 /* Main.storyboard in Resources */,
-				1B1D76D8260402540024B504 /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0BFDBF260540D600939FBA /* Constants.swift in Sources */,
 				1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */,
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
 				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
@@ -528,6 +539,7 @@
 				1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
+				1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
