@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        title = "Profile"
         checkPermissions()
         imagePickerController.delegate = self
         var httpCheckProfile = UserInfo.baseurl ?? ""
@@ -150,6 +150,7 @@ extension UIImageView {
            DispatchQueue.global().async { [weak self] in
                if let imageData = try? Data(contentsOf: url) {
                    if let image = UIImage(data: imageData) {
+                    print("Image fatching")
                        DispatchQueue.main.async {
                            self?.image = image
                        }

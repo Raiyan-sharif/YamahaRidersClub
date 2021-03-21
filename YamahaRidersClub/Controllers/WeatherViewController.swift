@@ -19,6 +19,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Weather"
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         

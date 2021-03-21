@@ -32,10 +32,17 @@ class HomeViewController: UIViewController{
                 }
             }
         }
+        loadViewOfEvent()
         fetchDataForProfile()
         
     }
-    
+    func loadViewOfEvent(){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController" ) as! ArticleViewController
+         
+//         navigationController?.pushViewController(vc,animated: true)
+        topView = vc.view
+        self.view.addSubview(topView!)
+    }
     func fetchDataForProfile(){
         DispatchQueue.main.async {
             print(ConstantSring.baseURLRiderProfile+"?MobileNo="+self.userDefaults.string(forKey: "mobileno")!)
@@ -82,6 +89,22 @@ class HomeViewController: UIViewController{
          animated: true)
     }
     
+    func goToScannerPage(){
+//        QRScannerViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "QRScannerViewController" ) as! QRScannerViewController
+         
+         navigationController?.pushViewController(vc,
+         animated: true)
+    }
+    
+    func goToArticlePage(){
+        //ArticleViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController" ) as! ArticleViewController
+         
+         navigationController?.pushViewController(vc,
+         animated: true)
+    }
+    
     
     @IBAction func didTapHomeMenu(_ sender: UIBarButtonItem) {
         
@@ -98,10 +121,12 @@ class HomeViewController: UIViewController{
     }
     
     func transitionToNew(_ menuType: DidSelectMenuItemOption){
-        let title = String(describing: menuType).capitalized
-        self.title = title
+//        let title = String(describing: menuType).capitalized
+//        self.title = title
         topView?.removeFromSuperview()
         switch menuType {
+        case .Events:
+            goToArticlePage()
         case .Weather:
             let vc = storyboard?.instantiateViewController(withIdentifier: "WeatherViewController" ) as! WeatherViewController
             topView = vc.view
@@ -112,6 +137,17 @@ class HomeViewController: UIViewController{
             let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController" ) as! ProfileViewController
             self.navigationController?.pushViewController(vc,
             animated: true)
+            
+        case .QRScanner:
+            goToScannerPage()
+        
+        case .Logout:
+            self.userDefaults.setValue(false, forKey: "isloggedIn")
+            self.userDefaults.setValue("", forKey: "mobileno")
+            self.userDefaults.setValue("", forKey: "password")
+            self.navigationController?.popToRootViewController(animated: true)
+            
+            
             
         default:
             dismiss(animated: false, completion: nil)
