@@ -8,6 +8,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SDWebImage
+
 class ArticleViewController: UITableViewController {
     var eventModel = EventModel()
     {
@@ -23,7 +25,7 @@ class ArticleViewController: UITableViewController {
 //        tableView12 = tableView
 //        tableView.reloadData()
         debugPrint("ok in count \(eventModel)")
-        return eventModel.data.count ?? 0
+        return eventModel.data.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,14 +34,19 @@ class ArticleViewController: UITableViewController {
 //        cell.articleNameLabel.text = "Hello"
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
 //        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
-        var stringURL = "\(eventModel.baseurl ?? "")\(eventModel.data[indexPath.row].imageName ?? "")"
-        print(stringURL)
-        let imageUrl:URL = URL(string:stringURL)!
+        let stringURL = "\(eventModel.baseurl ?? "")\(eventModel.data[indexPath.row].imageName ?? "")"
+//        print(stringURL)
+//        let imageUrl:URL = URL(string:stringURL)!
 //        let image = UIImageView()
-        cell.articleImageView.loadImge(withUrl:imageUrl)
-        cell.monthOfEvent.text = eventModel.data[indexPath.row].articleStartDate
+//        cell.articleImageView.loadImge(withUrl:imageUrl)
+//        imgView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+//        imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "placeholder"))
+        cell.articleImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        cell.articleImageView.sd_setImage(with: URL(string: stringURL), placeholderImage: #imageLiteral(resourceName: "yamaha_login_logo"))
+        
+        cell.monthOfEvent.text =  eventModel.data[indexPath.row].articleStartDate
         cell.articleNameLabel.text = eventModel.data[indexPath.row].articleName
-        print("Somtu")
+        
 //        tableView.reloadData()
         return cell
         
