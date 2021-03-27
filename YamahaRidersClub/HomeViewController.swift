@@ -220,11 +220,22 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         case .NewsFeed:
             self.optionToSelectedForEvent = 0
             loadAllEvents()
+        case .Offer:
+            //OfferViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "OfferViewController" ) as! OfferViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
+            
+        case .Dealer:
+            //DealerViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DealerViewController" ) as! DealerViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
         case .Events:
 //            goToArticlePage()
             self.optionToSelectedForEvent = 1
             loadAllEvents()
-            
+        
             
         case .TricksnTips:
             self.optionToSelectedForEvent = 2
@@ -234,7 +245,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
             gotToWeatherPage()
         case .QRScanner:
             goToScannerPage()
-        
+            
         case .Logout:
             self.userDefaults.setValue(false, forKey: "isloggedIn")
             self.userDefaults.setValue("", forKey: "mobileno")

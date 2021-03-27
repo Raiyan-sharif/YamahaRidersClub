@@ -15,6 +15,12 @@
 		1B0BFDDC260726EA00939FBA /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDDB260726EA00939FBA /* EventModel.swift */; };
 		1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE81260EDB9000939FBA /* OfferModel.swift */; };
 		1B0BFE87260EDC3600939FBA /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE86260EDC3600939FBA /* OfferViewController.swift */; };
+		1B0BFE8C260EE4F600939FBA /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE8B260EE4F600939FBA /* OfferTableViewCell.swift */; };
+		1B0BFE91260EF2C900939FBA /* DealerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE90260EF2C900939FBA /* DealerModel.swift */; };
+		1B0BFE96260EF5D500939FBA /* DealerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE95260EF5D500939FBA /* DealerViewController.swift */; };
+		1B0BFE9B260EFF2B00939FBA /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE9A260EFF2B00939FBA /* DealerTableViewCell.swift */; };
+		1B0BFEA0260F090B00939FBA /* MyRideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE9F260F090B00939FBA /* MyRideModel.swift */; };
+		1B0BFEA5260F099600939FBA /* MyRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFEA4260F099600939FBA /* MyRideViewController.swift */; };
 		1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* LoginModel.swift */; };
 		1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174025FF26EC008FF687 /* HomeViewController.swift */; };
 		1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174525FF281A008FF687 /* MenuViewController.swift */; };
@@ -75,6 +81,12 @@
 		1B0BFDDB260726EA00939FBA /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		1B0BFE81260EDB9000939FBA /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		1B0BFE86260EDC3600939FBA /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
+		1B0BFE8B260EE4F600939FBA /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
+		1B0BFE90260EF2C900939FBA /* DealerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerModel.swift; sourceTree = "<group>"; };
+		1B0BFE95260EF5D500939FBA /* DealerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerViewController.swift; sourceTree = "<group>"; };
+		1B0BFE9A260EFF2B00939FBA /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
+		1B0BFE9F260F090B00939FBA /* MyRideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRideModel.swift; sourceTree = "<group>"; };
+		1B0BFEA4260F099600939FBA /* MyRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRideViewController.swift; sourceTree = "<group>"; };
 		1B1C173925FA9B67008FF687 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1B1C174025FF26EC008FF687 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1B1C174525FF281A008FF687 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +283,9 @@
 				1B0BFDD62607151200939FBA /* ArticleTableViewCell.swift */,
 				1B0BFDDB260726EA00939FBA /* EventModel.swift */,
 				1B0BFE81260EDB9000939FBA /* OfferModel.swift */,
+				1B0BFE8B260EE4F600939FBA /* OfferTableViewCell.swift */,
+				1B0BFE90260EF2C900939FBA /* DealerModel.swift */,
+				1B0BFE9F260F090B00939FBA /* MyRideModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +299,9 @@
 				1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */,
 				1B0BFDD1260714E800939FBA /* ArticleViewController.swift */,
 				1B0BFE86260EDC3600939FBA /* OfferViewController.swift */,
+				1B0BFE95260EF5D500939FBA /* DealerViewController.swift */,
+				1B0BFE9A260EFF2B00939FBA /* DealerTableViewCell.swift */,
+				1B0BFEA4260F099600939FBA /* MyRideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -552,27 +570,33 @@
 				1B0BFDBF260540D600939FBA /* Constants.swift in Sources */,
 				1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */,
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
+				1B0BFE96260EF5D500939FBA /* DealerViewController.swift in Sources */,
 				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
 				1B0BFE87260EDC3600939FBA /* OfferViewController.swift in Sources */,
 				1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */,
+				1B0BFEA5260F099600939FBA /* MyRideViewController.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
 				1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */,
 				1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
+				1B0BFE91260EF2C900939FBA /* DealerModel.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
 				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,
+				1B0BFEA0260F090B00939FBA /* MyRideModel.swift in Sources */,
 				1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */,
 				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
 				1B0BFDD72607151200939FBA /* ArticleTableViewCell.swift in Sources */,
 				1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */,
 				1BEC5F8B2602BCED00664EA6 /* ArticleManager.swift in Sources */,
+				1B0BFE9B260EFF2B00939FBA /* DealerTableViewCell.swift in Sources */,
 				1BEC5F7E2602BB6400664EA6 /* ArticleModel.swift in Sources */,
 				1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */,
+				1B0BFE8C260EE4F600939FBA /* OfferTableViewCell.swift in Sources */,
 				1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */,
 				1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */,
 				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
