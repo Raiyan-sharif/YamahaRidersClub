@@ -17,5 +17,12 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var youtubeVideoLinkBtn: UIButton!
     @IBOutlet weak var eventDetailsInfoLabel: UILabel!
+    @IBOutlet weak var articleAuthor: UILabel!
+    var urlOfYouTube: String!
+    
+    @IBAction func youtubeButtonOnPress(_ sender: Any) {
+        print("ok")
+        UIApplication.shared.openURL(NSURL(string: urlOfYouTube)! as URL)
+    }
     
 }

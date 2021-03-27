@@ -33,7 +33,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        locationManager.requestLocation()
+//        locationManager.requestLocation()
     }
     
     func didUpdateWeather(_ weatherManger: WeatherManager, weather: WeatherModel){

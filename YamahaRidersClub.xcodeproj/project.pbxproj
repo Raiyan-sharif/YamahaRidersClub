@@ -13,6 +13,8 @@
 		1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDD1260714E800939FBA /* ArticleViewController.swift */; };
 		1B0BFDD72607151200939FBA /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDD62607151200939FBA /* ArticleTableViewCell.swift */; };
 		1B0BFDDC260726EA00939FBA /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDDB260726EA00939FBA /* EventModel.swift */; };
+		1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE81260EDB9000939FBA /* OfferModel.swift */; };
+		1B0BFE87260EDC3600939FBA /* OfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFE86260EDC3600939FBA /* OfferViewController.swift */; };
 		1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C173925FA9B67008FF687 /* LoginModel.swift */; };
 		1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174025FF26EC008FF687 /* HomeViewController.swift */; };
 		1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C174525FF281A008FF687 /* MenuViewController.swift */; };
@@ -71,6 +73,8 @@
 		1B0BFDD1260714E800939FBA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		1B0BFDD62607151200939FBA /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		1B0BFDDB260726EA00939FBA /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		1B0BFE81260EDB9000939FBA /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		1B0BFE86260EDC3600939FBA /* OfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferViewController.swift; sourceTree = "<group>"; };
 		1B1C173925FA9B67008FF687 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		1B1C174025FF26EC008FF687 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1B1C174525FF281A008FF687 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				1B0BFDC326054A9E00939FBA /* UserInfo.swift */,
 				1B0BFDD62607151200939FBA /* ArticleTableViewCell.swift */,
 				1B0BFDDB260726EA00939FBA /* EventModel.swift */,
+				1B0BFE81260EDB9000939FBA /* OfferModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				1BEC5FC62603F44800664EA6 /* WeatherViewController.swift */,
 				1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */,
 				1B0BFDD1260714E800939FBA /* ArticleViewController.swift */,
+				1B0BFE86260EDC3600939FBA /* OfferViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */,
 				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
+				1B0BFE87260EDC3600939FBA /* OfferViewController.swift in Sources */,
 				1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
@@ -555,6 +562,7 @@
 				1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
+				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
 				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,

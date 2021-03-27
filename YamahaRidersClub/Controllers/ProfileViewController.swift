@@ -43,6 +43,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         var httpCheckProfile = UserInfo.baseurl ?? ""
         httpCheckProfile = converHttpToHttps(httpCheckProfile)
         let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
+        
+        
         guard let imageUrl:URL = URL(string: imageUrlString) else {
                     return
                 }
@@ -52,7 +54,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         profilePhotoImageView.loadImge(withUrl: imageUrl)
+//        loadDownloadImageURL()
         coverPhotoImageView.loadImge(withUrl: coverImageURL)
+        
         nameTF.text = UserInfo.name ?? "Name"
         memberDaysCountTF.text = "Member for " + (UserInfo.memberDays ?? "0") + " days"
         registrationInfoLabel.text = "Registration info- " + (UserInfo.registrationNo ?? "")
@@ -71,6 +75,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         
      
+    }
+    
+    func loadDownloadImageURL(){
+        var httpCheckProfile = UserInfo.baseurl ?? ""
+        httpCheckProfile = converHttpToHttps(httpCheckProfile)
+        
+        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
+        
+        guard let UrlOfImage = URL(string: imageUrlString) else { return }
+        let task = URLSession.shared.downloadTask(with: UrlOfImage) { (urlLocation, response, error) in
+            guard let location = urlLocation
+            else{
+                print("location is nil")
+                return
+            }
+            print(location)
+            let imageData = try! Data(contentsOf: location)
+            
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.profilePhotoImageView.image = image
+            }
+            
+        }
+        task.resume()
     }
     
     func converHttpToHttps(_ httpCheckProfile: String) -> String{

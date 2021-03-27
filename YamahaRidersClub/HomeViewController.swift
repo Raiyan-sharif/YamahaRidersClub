@@ -9,39 +9,124 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+    
+    var optionToSelectedForEvent:Int = 0
+    var countOfData:Int = 0
+    //0- for all, 1 for event, 2 for tick & tips
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        countOfData = articles?.data.count ?? 0
+        if countOfData == 0{
+            return 1
+        }
+        print(countOfData)
+        return articles?.data.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if countOfData == 0{
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyDataCell")
+            
+//            emptyCell.imageView?.frame = CGRectMake(emptyCell.imageView?.frame.origin.x,emptyCell.imageView?.frame.origin.y,desiredWidth,self.imageView.frame.size.height);
+            emptyCell?.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            return emptyCell ?? UITableViewCell()
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as? ArticleTableViewCell
+        if let urlString = URL(string: (articles?.baseurl ?? "") + (articles?.data[0].imageName ?? "")){
+            cell?.articleImageView.loadImge(withUrl: urlString)
+        }
+        
+        
+        //Date Manipulations
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        let startDate = dateFormatter.date(from: articles?.data[indexPath.row].articleStartDate ?? "2021-03-11 00:00:00.000")
+        let endDate = dateFormatter.date(from: articles?.data[indexPath.row].articleEndDate ?? "2021-03-11 00:00:00.000")
+        
+//        print(date)
+        let cellDateFormat = DateFormatter()
+        cellDateFormat.setLocalizedDateFormatFromTemplate("MMM")
+        let month = cellDateFormat.string(from: startDate ?? Date())
+        cellDateFormat.setLocalizedDateFormatFromTemplate("dd")
+        let day = cellDateFormat.string(from: startDate ?? Date())
+        
+        cellDateFormat.setLocalizedDateFormatFromTemplate("MMM dd")
+        let startDay = cellDateFormat.string(from: startDate ?? Date())
+        let endDay = cellDateFormat.string(from: endDate ?? Date())
+        
+        print("\(startDay) - \(endDay)")
+        
+        cell?.monthOfEvent.text = month
+        cell?.dayOfEvent.text = day
+        cell?.articleStartEndDate.text = "\(startDay) - \(endDay)"
+        cell?.articleNameLabel.text = articles?.data[indexPath.row].articleName
+        cell?.eventLocation.text = articles?.data[indexPath.row].eventLocation
+        cell?.eventDetailsInfoLabel.text = articles?.data[indexPath.row].eventDetailsInfo
+        cell?.articleAuthor.text = articles?.data[indexPath.row].authorBy
+        cell?.urlOfYouTube = articles?.data[indexPath.row].youtubeVideoLink ?? "www.youtube.com"
+        
+        
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    
+    
     var topView: UIView?
+    var articles: ArticleModel?
     let transition = SlideInTransition()
     @IBOutlet weak var ItemMenuIcon: UIBarButtonItem!
     
+    @IBOutlet weak var tableView: UITableView!
     var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         navigationController?.navigationItem.hidesBackButton = true
+        
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navigationController?.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        tableView.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         title = "YRC-BD"
         ItemMenuIcon.image = UIImage(systemName: "rectangle.split.3x3")
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1794194281, green: 0.06704645604, blue: 0.6007958055, alpha: 1)
-        AF.request("https://apps.acibd.com/apps/yrc/syncdata/articalsync?articaltype=0&start=0&end=10").response { response in
-//            debugPrint(response.debugDescription)
-            if let res = response.value{
-                if let finalData = res{
-                    let swiftyJsonVar = JSON(finalData)
-                    print(swiftyJsonVar)
-                }
-            }
-        }
-        loadViewOfEvent()
+        
+        
+        loadAllEvents()
         fetchDataForProfile()
         
     }
-    func loadViewOfEvent(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController" ) as! ArticleViewController
-         
-//         navigationController?.pushViewController(vc,animated: true)
-        topView = vc.view
-        self.view.addSubview(topView!)
+    func loadAllEvents(){
+        DispatchQueue.main.async {
+            AF.request("https://apps.acibd.com/apps/yrc/syncdata/articalsync?articaltype=\(self.optionToSelectedForEvent)&start=0&end=10").response { response in
+    //            debugPrint(response.debugDescription)
+                if let res = response.value{
+                    if let finalData = res{
+                        let decoder = JSONDecoder()
+                        do{
+                            self.articles = try decoder.decode(ArticleModel.self, from: finalData)
+                            print(self.articles ?? "No Data")
+                            
+                            self.tableView.reloadData()
+                        }
+                        catch{
+                            print(error)
+                        }
+//                        let swiftyJsonVar = JSON(finalData)
+//                        print("Home View")
+//                        print(swiftyJsonVar)
+                    }
+                }
+            }
+        }
     }
     func fetchDataForProfile(){
         DispatchQueue.main.async {
@@ -97,13 +182,13 @@ class HomeViewController: UIViewController{
          animated: true)
     }
     
-    func goToArticlePage(){
-        //ArticleViewController
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController" ) as! ArticleViewController
-         
-         navigationController?.pushViewController(vc,
-         animated: true)
-    }
+//    func goToArticlePage(){
+//        //ArticleViewController
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController" ) as! ArticleViewController
+//
+//         navigationController?.pushViewController(vc,
+//         animated: true)
+//    }
     
     
     @IBAction func didTapHomeMenu(_ sender: UIBarButtonItem) {
@@ -125,19 +210,28 @@ class HomeViewController: UIViewController{
 //        self.title = title
         topView?.removeFromSuperview()
         switch menuType {
-        case .Events:
-            goToArticlePage()
-        case .Weather:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "WeatherViewController" ) as! WeatherViewController
-            topView = vc.view
-            self.view.addSubview(topView!)
-//            gotToWeatherPage()
+        
         case .MyPrifile:
             //ProfileViewController
             let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController" ) as! ProfileViewController
             self.navigationController?.pushViewController(vc,
             animated: true)
             
+        case .NewsFeed:
+            self.optionToSelectedForEvent = 0
+            loadAllEvents()
+        case .Events:
+//            goToArticlePage()
+            self.optionToSelectedForEvent = 1
+            loadAllEvents()
+            
+            
+        case .TricksnTips:
+            self.optionToSelectedForEvent = 2
+            loadAllEvents()
+        
+        case .Weather:
+            gotToWeatherPage()
         case .QRScanner:
             goToScannerPage()
         
