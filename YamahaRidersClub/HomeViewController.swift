@@ -220,12 +220,22 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         case .NewsFeed:
             self.optionToSelectedForEvent = 0
             loadAllEvents()
+            
+        case .Products:
+            //ProductListViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ProductListViewController" ) as! ProductListViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
         case .Offer:
             //OfferViewController
             let vc = storyboard?.instantiateViewController(withIdentifier: "OfferViewController" ) as! OfferViewController
             self.navigationController?.pushViewController(vc,
             animated: true)
-            
+        case .Parts:
+            //PartsViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PartsViewController" ) as! PartsViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
         case .Dealer:
             //DealerViewController
             let vc = storyboard?.instantiateViewController(withIdentifier: "DealerViewController" ) as! DealerViewController
@@ -240,7 +250,11 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         case .TricksnTips:
             self.optionToSelectedForEvent = 2
             loadAllEvents()
-        
+        case .MyRide:
+//            MyRideViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "MyRideViewController" ) as! MyRideViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
         case .Weather:
             gotToWeatherPage()
         case .QRScanner:
