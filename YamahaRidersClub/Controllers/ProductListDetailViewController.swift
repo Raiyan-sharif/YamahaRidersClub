@@ -16,34 +16,116 @@ class ProductListDetailViewController: UIViewController
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var pageViewController: UIPageControl!
-    var imageList:[UIImage] = []
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var featureLabel: UILabel!
+    @IBOutlet weak var specificationLabel: UILabel!
+    
+    
+    
+    
+   
+    
+    var featureList:[String] = []
+    var specificationList:[String] = []
     
     var urlToGetImageDetails = "http://dashboard.acigroup.info/apps/yamahacustomerarsenal/product/getproductdetails?productid=\(ProductsModel.productid)"
-    
-    var imageUrlList = [
-        "http://dashboard.acigroup.info/yca/assets/img/medium/132032621_3421792221262659_8457206876493126947_n_(1)_medium-800x800.png",
-        "http://dashboard.acigroup.info/yca/assets/img/medium/136541176_3709780029105130_764696159298926066_n_medium-800x800.png",
-        "http://dashboard.acigroup.info/yca/assets/img/medium/142032854_5120198814689287_7256142203356588508_n_medium-800x800.png",
-        "http://dashboard.acigroup.info/yca/137871771_3991968927504583_4510368679345436491_n_medium-800x800.png"
+    /*
+     "http://dashboard.acigroup.info/yca/assets/img/medium/132032621_3421792221262659_8457206876493126947_n_(1)_medium-800x800.png",
+     "http://dashboard.acigroup.info/yca/assets/img/medium/136541176_3709780029105130_764696159298926066_n_medium-800x800.png",
+     "http://dashboard.acigroup.info/yca/assets/img/medium/142032854_5120198814689287_7256142203356588508_n_medium-800x800.png",
+     "http://dashboard.acigroup.info/yca/137871771_3991968927504583_4510368679345436491_n_medium-800x800.png"
+     */
+    var imageUrlList:[String] = [
+        
     ]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-//        cell?.productImage.loadImge(withUrl: urlData)
-        for i in 0 ... imageUrlList.count-1{
-            let urlData = URL(string: imageUrlList[i]) ?? URL(string: "http://dashboard.acigroup.info/yca/assets/img/medium/R15%20V3-1.png")!
-            DispatchQueue.global().async { [weak self] in
-                    if let data = try? Data(contentsOf: urlData) {
-                        if let image = UIImage(data: data) {
-                            DispatchQueue.main.async {
-                                self?.imageList.append(image)
-                            }
+    var time = Timer()
+    var count = 0
+//
+    func fetchDataForProfile(){
+        let urlString = "http://dashboard.acigroup.info/apps/yamahacustomerarsenal/product/getproductdetails?productid=\(ProductsModel.productInfo[ProductsModel.activeSelectionIndex].productID)"
+        print(urlString)
+        DispatchQueue.main.async{
+            AF.request(urlString).response { (response) in
+              
+                switch response.result{
+                case .success(let value):
+                    let json = JSON(value)
+                    
+                    print(json["ProductImage"])
+                    let images = json["ProductImage"]
+                    for i in 0 ... images.count - 1{
+                        self.imageUrlList.append("http://dashboard.acigroup.info/yca/\(json["ProductImage"][i]["Image"].string ?? "")")
+                    }
+                    let feature = json["Features"]
+                    if(feature.count > 0){
+                        for i in 0 ... feature.count-1{
+                            self.featureLabel.text = (self.featureLabel.text ?? "") +
+                            (json["Features"][i]["FeatureName"].string ?? "")
+                            
+                            self.featureList.append(json["Features"][i]["FeatureName"].string ?? "")
                         }
                     }
+                    
+                    
+                    let specification = json["Specifications"]
+                    if(specification.count > 0){
+                        for i in 0 ... specification.count-1{
+                            self.specificationLabel.text = (self.specificationLabel.text ?? "") + "Specification Type: \(json["Specifications"][i]["SpecificationType"].string ?? "")\n Specification Name: \(json["Specifications"][i]["SpecificationName"].string ?? "")\n Specification Value: \(json["Specifications"][i]["SpecificationValue"].string ?? "")"
+                            self.specificationList.append("Specification Type: \(json["Specifications"][i]["SpecificationType"].string ?? "")\n Specification Name: \(json["Specifications"][i]["SpecificationName"].string ?? "")\n SpecificationValue: \(json["Specifications"][i]["SpecificationValue"].string ?? "")")
+                        }
+                    }
+                    
+                    
+                    self.sliderCollectionView.reloadData()
+                    
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
                 }
+            
+            }
+            
+        }
+    }
+    deinit {
+        imageUrlList = []
+        featureList = []
+        specificationList = []
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pageViewController.numberOfPages = imageUrlList.count
+        pageViewController.currentPage = 0
+        
+        fetchDataForProfile()
+        productNameLabel.text = ProductsModel.productInfo[ProductsModel.activeSelectionIndex].productName
+        descriptionLabel.text = ProductsModel.productInfo[ProductsModel.activeSelectionIndex].productInfoDescription
+        priceLabel.text = "Price: Tk\(ProductsModel.productInfo[ProductsModel.activeSelectionIndex].price)"
+        
+        
+        DispatchQueue.main.async {
+            self.time = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+        }
+        
+        
+    }
+    
+    
+    @objc func changeImage(){
+        if count < imageUrlList.count{
+            let index = IndexPath.init(item: count, section: 0)
+            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageViewController.currentPage = count
+            count += 1
+        }
+        else{
+            count = 0
+            let index = IndexPath.init(item: count, section: 0)
+            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageViewController.currentPage = count
         }
     }
 }
@@ -51,20 +133,17 @@ class ProductListDetailViewController: UIViewController
 
 extension ProductListDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageList.count
+        return imageUrlList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductListDetailViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductImageDetailsCollectionViewCell", for: indexPath) as! ProductImageDetailsCollectionViewCell
+//        cell.productImage.image = imageList[indexPath.row]
+        let urlData = URL(string: imageUrlList[indexPath.row]) ?? URL(string: "http://dashboard.acigroup.info/yca/assets/img/medium/R15%20V3-1.png")!
+        print("ok")
+        cell.productImage.loadImge(withUrl: urlData)
+        print(indexPath.row)
         
-        if let vc = cell.viewWithTag(111) as? UIImageView{
-            print("Here")
-            vc.image = imageList[indexPath.row]
-        }
-        else if let ab = cell.viewWithTag(222) as? UIPageControl{
-            print("There")
-            ab.currentPage = indexPath.row
-        }
         return cell
     }
     

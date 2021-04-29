@@ -101,7 +101,7 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
                             let dataLoop = json["product_info"]
                             
                             for i in 0 ... dataLoop.count-1{
-                                print(json["product_info"][i]["ProductName"])
+                          
                                 let product = ProductInfo(sl: json["product_info"][i]["SL"].string ?? "", productID: json["product_info"][i]["ProductID"].string ?? "", categoryName: json["product_info"][i]["CategoryName"].string ?? "", productName: json["product_info"][i]["ProductName"].string ?? "", price: json["product_info"][i]["Price"].string ?? "", productInfoDescription: json["product_info"][i]["Description"].string ?? "", entryBy: json["product_info"][i]["EntryBy"].string ?? "", entryDate: json["product_info"][i]["EntryDate"].string ?? "", active: json["product_info"][i]["Active"].string ?? "", imageID: json["product_info"][i]["ImageID"].string ?? "", image: json["product_info"][i]["Image"].string ?? "", defaultImage: json["product_info"][i]["DefaultImage"].string ?? "")
                                 ProductsModel.productInfo.append(product)
                             }

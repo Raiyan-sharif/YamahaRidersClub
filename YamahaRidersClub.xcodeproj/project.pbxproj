@@ -45,6 +45,7 @@
 		1BAA6C2D25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */; };
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
 		1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */; };
+		1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
@@ -134,6 +135,7 @@
 		1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDetailViewController.swift; sourceTree = "<group>"; };
+		1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				1BF72823261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift */,
 				1BF7284E261CA7A400A0ED4F /* LubePartsTableViewCell.swift */,
 				1BF72853261CA97A00A0ED4F /* LubePartsModel.swift */,
+				1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
 				1B0BFEC926107AD700939FBA /* MyRideTableViewCell.swift in Sources */,
 				1B0BFDC9260658CF00939FBA /* QRScannerViewController.swift in Sources */,
+				1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */,
 				1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */,
 				1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */,
 				1B0BFDDC260726EA00939FBA /* EventModel.swift in Sources */,
