@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SafariServices
 
 class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
@@ -89,7 +90,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         
         navigationController?.navigationItem.hidesBackButton = true
-        
+        self.optionToSelectedForEvent = 1
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationController?.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 //        tableView.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -265,8 +266,25 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
             self.userDefaults.setValue("", forKey: "mobileno")
             self.userDefaults.setValue("", forKey: "password")
             self.navigationController?.popToRootViewController(animated: true)
+        case .About:
+            ConstantSring.privacyOption = 2
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPageViewController" ) as! PrivacyPageViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
             
-            
+        case .License:
+            //PrivacyPageViewController
+            ConstantSring.privacyOption = 1
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPageViewController" ) as! PrivacyPageViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
+        case .PrivacyPocicy:
+//            ConstantSring.privacyOption = 3
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPageViewController" ) as! PrivacyPageViewController
+//            self.navigationController?.pushViewController(vc,
+//            animated: true)
+        let vc = SFSafariViewController(url: URL(string: "http://www.yamahabd.com/privacy_policy.php")!)
+        present(vc,animated: true)
             
         default:
             dismiss(animated: false, completion: nil)

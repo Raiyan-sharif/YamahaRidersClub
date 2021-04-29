@@ -9,4 +9,5 @@ import Foundation
 
 class ConstantSring{
     static let baseURLRiderProfile = "https://apps.acibd.com/apps/yrc/syncdata/riderprofile"
+    static var privacyOption = 1
 }

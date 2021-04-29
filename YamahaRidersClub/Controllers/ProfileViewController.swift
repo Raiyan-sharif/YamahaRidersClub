@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var coverPhotoImageView: UIImageView!
     @IBOutlet weak var profilePhotoImageView: UIImageView!
     @IBOutlet weak var nameTF: UILabel!
+    @IBOutlet weak var viewOfProfileImageView: UIView!
     
     @IBOutlet weak var memberDaysCountTF: UILabel!
     @IBOutlet weak var registrationInfoLabel: UILabel!
@@ -29,10 +30,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var maxSpeedLabel: UILabel!
     @IBOutlet weak var averageSpeedLabel: UILabel!
     @IBOutlet weak var fbProfileLink: UILabel!
+    @IBOutlet weak var dataHolderStack: UIStackView!
     
-    
+    @IBOutlet weak var outerBorderOfImage: UIView!
+    var userDefaults = UserDefaults.standard
     var imagePickerController = UIImagePickerController()
-    
+    var imagePickerControllerCoverPhoto = UIImagePickerController()
     //MARK:- VIEWDidLOad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         title = "Profile"
         checkPermissions()
         imagePickerController.delegate = self
+        imagePickerControllerCoverPhoto.delegate = self
+        dataHolderStack.layer.borderWidth = 2
+        dataHolderStack.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        dataHolderStack.layer.cornerRadius = 14
+        profilePhotoImageView.layer.cornerRadius = 30
+        viewOfProfileImageView.layer.cornerRadius = 30
+        outerBorderOfImage.layer.cornerRadius = 40
+        outerBorderOfImage.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        outerBorderOfImage.layer.borderWidth = 2
+        fillProfileData()
+        
+        
+        
+     
+    }
+    
+    func fillProfileData(){
         var httpCheckProfile = UserInfo.baseurl ?? ""
         httpCheckProfile = converHttpToHttps(httpCheckProfile)
         let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
@@ -70,11 +90,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         averageSpeedLabel.text = "Avg Speed - " + (UserInfo.avgSpeed ?? "")
         
         fbProfileLink.text = (UserInfo.facebookIDLink ?? "")
-        
-        
-        
-        
-     
     }
     
     func loadDownloadImageURL(){
@@ -108,16 +123,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             temp = httpCheckProfile
         }
         else{
-            let endOfSentence = httpCheckProfile.firstIndex(of: ":")!
-            let firstSentence = httpCheckProfile[endOfSentence...]
-            temp = "https"+firstSentence
+            if (!httpCheckProfile.isEmpty){
+                let endOfSentence = httpCheckProfile.firstIndex(of: ":")!
+                let firstSentence = httpCheckProfile[endOfSentence...]
+                temp = "https"+firstSentence
+            }
+            else{
+                temp = ""
+            }
         }
         return temp
     }
     
     @IBAction func tappedOnCoverPhotoButton(_ sender: UIButton) {
-        self.imagePickerController.sourceType = .photoLibrary
-        self.present(self.imagePickerController, animated: true, completion: nil)
+        self.imagePickerControllerCoverPhoto.sourceType = .photoLibrary
+//        self.imagePickerControllerCoverPhoto.allowsEditing = true
+        
+        self.present(self.imagePickerControllerCoverPhoto, animated: true, completion: nil)
     }
     
     
@@ -126,30 +148,128 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func tappedOnProfilePhotoButton(_ sender: UIButton) {
         print("Camera")
         //http://apps.acibd.com/apps/yrc/syncdata/riderprofile?MobileNo=01709222843
-//        let picker = UIImagePickerController()
-//        picker.sourceType = .camera
-//        picker.allowsEditing = true
-//        picker.delegate = self
-//        present(picker, animated: true)
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+        
+        
         
         //Test Image
-        let imageUrlString = "https://apps.acibd.com/apps/yrc/application/assets/upload/01709222843_20210111_140008_515_1715378136842885407.jpg"
+        let httpCheckProfile = UserInfo.baseurl ?? ""
+        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
+        print(imageUrlString)
         guard let imageUrl:URL = URL(string: imageUrlString) else {
                     return
                 }
+        
         profilePhotoImageView.loadImge(withUrl: imageUrl)
         
         
         
     }
     
+    func uploadCoverImageToServer(){
+        let picture: UIImage = coverPhotoImageView.image ?? UIImage()
+        let mobileNo = self.userDefaults.string(forKey: "mobileno") ?? ""
+        
+        let image = picture
+        let imgData = image.jpegData(compressionQuality: 0.2)!
+
+//        let parameters:String = "MobileNo=\(mobileNo)"
+        
+        let parameters2 = "Picture=\(imgData)"
+        
+
+        
+        let baseURLString = "http://apps.acibd.com/apps/yrc/syncdata/riderCoverPhoto?MobileNo=\(mobileNo)&"
+        
+
+        
+       AF.upload(multipartFormData: { multipartFormData in
+               multipartFormData.append(imgData, withName: "CoverPhoto",fileName: "\(mobileNo)_\(UUID().uuidString).jpg", mimeType: "image/jpg")
+                
+
+           },
+       to: baseURLString).responseJSON
+       { (result) in
+
+        print(result)
+        self.fetchDataForProfile()
+       }
+        
+    }
+    
+    func uploadProfileImageToServer() {
+        
+        let picture: UIImage = profilePhotoImageView.image ?? UIImage()
+        let mobileNo = self.userDefaults.string(forKey: "mobileno") ?? ""
+        
+        let image = picture
+        let imgData = image.jpegData(compressionQuality: 0.2)!
+
+//        let parameters:String = "MobileNo=\(mobileNo)"
+        
+        let parameters2 = "Picture=\(imgData)"
+        let datapar1: Data = parameters2.data(using: .utf8) ?? Data()
+//        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+//        data.append("Content-Disposition: form-data; name=\"fileToUpload\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+//        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+//        data.append(UIImagePNGRepresentation(image)!)
+//
+        
+        let baseURLString = "http://apps.acibd.com/apps/yrc/syncdata/riderpicture?MobileNo=\(mobileNo)&"
+        guard let url = URL(string: baseURLString) else {
+            print("Invalid URL")
+            return
+        }
+//        var urlRequest: URLRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "POST"
+//        urlRequest.httpBody = datapar1
+//
+//        urlRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        print(urlRequest)
+//        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+//            guard let data = data else{
+//                print("invalid data")
+//                return
+//            }
+//            let responseStr: String = String(data: data, encoding: .utf8) ?? ""
+//            print(responseStr)
+//        }.resume()
+        
+       AF.upload(multipartFormData: { multipartFormData in
+               multipartFormData.append(imgData, withName: "Picture",fileName: "\(mobileNo)_\(UUID().uuidString).jpg", mimeType: "image/jpg")
+                
+
+           },
+       to: baseURLString).responseJSON
+       { (result) in
+
+        print(result)
+        self.fetchDataForProfile()
+       }
+        
+//        fetchDataForProfile()
+//        fillProfileData()
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if picker.sourceType == .photoLibrary{
             coverPhotoImageView?.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            uploadCoverImageToServer()
         }
-        profilePhotoImageView?.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        if picker.sourceType == .camera{
+            profilePhotoImageView?.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+            uploadProfileImageToServer()
+        }
+        
+        print()
         picker.dismiss(animated: true, completion: nil)
+        
     }
+
     
     func checkPermissions() {
             if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
@@ -171,7 +291,45 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("Need Access")
         }
     }
-    
+    func fetchDataForProfile(){
+        DispatchQueue.main.async {
+            print(ConstantSring.baseURLRiderProfile+"?MobileNo="+self.userDefaults.string(forKey: "mobileno")!)
+            AF.request(ConstantSring.baseURLRiderProfile+"?MobileNo="+self.userDefaults.string(forKey: "mobileno")!).responseJSON { (response) in
+                switch response.result{
+                case .success(let value):
+                    let json = JSON(value)
+                    print(json)
+                    if json["success"] == 1{
+                        UserInfo.baseurl = json["baseurl"].string
+                        UserInfo.message = json["message"].string
+                        UserInfo.chassisNo = json["data"][0]["ChassisNo"].string
+                        UserInfo.registrationNo = json["data"][0]["RegistrationNo"].string
+                        UserInfo.avgSpeed = json["data"][0]["AvgSpeed"].string
+                        UserInfo.maxSpeed = json["data"][0]["MaxSpeed"].string
+                        UserInfo.bloodGroup = json["data"][0]["BloodGroup"].string
+                        UserInfo.engineNo = json["data"][0]["EngineNo"].string
+                        UserInfo.facebookIDLink = json["data"][0]["FacebookIdLink"].string
+                        UserInfo.drivingLicense = json["data"][0]["DrivingLicense"].string
+                        UserInfo.coverPhoto = json["data"][0]["CoverPhoto"].string
+                        UserInfo.brandName = json["data"][0]["BrandName"].string
+                        UserInfo.picture = json["data"][0]["Picture"].string
+                        UserInfo.mobileno = json["data"][0]["Mobileno"].string
+                        UserInfo.name = json["data"][0]["Name"].string
+                        UserInfo.dateOfBirth = json["data"][0]["DateOfBirth"].string
+                        UserInfo.nid = json["data"][0]["NID"].string
+                        UserInfo.bikeModel = json["data"][0]["BikeModel"].string
+                        UserInfo.memberDays = json["data"][0]["MemberDays"].string
+                    }
+                    self.fillProfileData()
+                
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    
+                }
+            
+            }
+        }
+    }
 }
 
 extension UIImageView {

@@ -22,6 +22,8 @@ enum DidSelectMenuItemOption: Int{
     case Weather
     case Logout
     case About
+    case PrivacyPocicy
+    case License
     
     
 }

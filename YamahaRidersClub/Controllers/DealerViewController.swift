@@ -35,7 +35,8 @@ class DealerViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
-        
+        title = "Dealers"
+        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         loadAllDealer()
     }
     

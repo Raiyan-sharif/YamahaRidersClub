@@ -23,7 +23,25 @@ class MyRideViewController: UIViewController, UITableViewDataSource, UITableView
         cell?.startAddress.text = myRideModel?.data[indexPath.row].startAddress
         cell?.endAddress.text = myRideModel?.data[indexPath.row].endAddress
         cell?.speed.text = "Avg speed - \(myRideModel?.data[indexPath.row].avgSpeed ?? "") - Max speed \(myRideModel?.data[indexPath.row].maxSpeed ?? "")"
-        cell?.timeDuration.text = "\(myRideModel?.data[indexPath.row].startTime ?? "")\n\(myRideModel?.data[indexPath.row].endTime ?? "")"
+        
+        //Date Manipulations
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        let startDate = dateFormatter.date(from: myRideModel?.data[indexPath.row].startTime ?? "2021-03-11 00:00:00.000")
+        let endDate = dateFormatter.date(from: myRideModel?.data[indexPath.row].startTime ?? "2021-03-11 00:00:00.000")
+        
+//        print(date)
+        let cellDateFormat = DateFormatter()
+        cellDateFormat.setLocalizedDateFormatFromTemplate("MMM dd, yyyy HH:mm")
+        let st = cellDateFormat.string(from: startDate ?? Date())
+       
+        let lt = cellDateFormat.string(from: endDate ?? Date())
+        
+//        cellDateFormat.setLocalizedDateFormatFromTemplate("MMM dd")
+//        let startDay = cellDateFormat.string(from: startDate ?? Date())
+//        let endDay = cellDateFormat.string(from: endDate ?? Date())
+        cell?.timeDuration.text = "\(st)\n\(lt)"
         return cell ?? UITableViewCell()
     }
     
@@ -32,6 +50,7 @@ class MyRideViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         title = "My Ride History"
         loadAllRides()
         // Do any additional setup after loading the view.

@@ -44,6 +44,7 @@
 		1BAA6C2225FA0F3F0050EDE0 /* YamahaRidersClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2125FA0F3F0050EDE0 /* YamahaRidersClubTests.swift */; };
 		1BAA6C2D25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */; };
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
+		1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
@@ -55,6 +56,17 @@
 		1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */; };
 		1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FD02603F4E200664EA6 /* WeatherData.swift */; };
 		1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5FD52603F50400664EA6 /* WeatherModel.swift */; };
+		1BF7281A261B167700A0ED4F /* GeneralUserBikeModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72819261B167600A0ED4F /* GeneralUserBikeModelViewController.swift */; };
+		1BF7281F261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7281E261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift */; };
+		1BF72824261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72823261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift */; };
+		1BF72829261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72828261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift */; };
+		1BF72833261C8EF400A0ED4F /* terms_conditions.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BF72831261C8EF300A0ED4F /* terms_conditions.html */; };
+		1BF72834261C8EF400A0ED4F /* open_source_licenses.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BF72832261C8EF300A0ED4F /* open_source_licenses.html */; };
+		1BF72839261C907000A0ED4F /* PrivacyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72838261C907000A0ED4F /* PrivacyPageViewController.swift */; };
+		1BF72841261CA0B200A0ED4F /* LubePartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72840261CA0B200A0ED4F /* LubePartsViewController.swift */; };
+		1BF7284A261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72849261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift */; };
+		1BF7284F261CA7A400A0ED4F /* LubePartsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7284E261CA7A400A0ED4F /* LubePartsTableViewCell.swift */; };
+		1BF72854261CA97A00A0ED4F /* LubePartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF72853261CA97A00A0ED4F /* LubePartsModel.swift */; };
 		76D2697AADDCA2C271C8924A /* Pods_YamahaRidersClubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25ECA0D90A781BF2673F8290 /* Pods_YamahaRidersClubTests.framework */; };
 		7D8AB942B6D60DBDC1B41278 /* Pods_YamahaRidersClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE346B96E2ACE6BCF26C2A27 /* Pods_YamahaRidersClub.framework */; };
 		926B61BD3C4B562B0D05729B /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908FCF697FD76C0350753CB8 /* Pods_YamahaRidersClub_YamahaRidersClubUITests.framework */; };
@@ -121,6 +133,7 @@
 		1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamahaRidersClubUITests.swift; sourceTree = "<group>"; };
 		1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDetailViewController.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +145,17 @@
 		1BEC5FCB2603F4C200664EA6 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		1BEC5FD02603F4E200664EA6 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		1BEC5FD52603F50400664EA6 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		1BF72819261B167600A0ED4F /* GeneralUserBikeModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeModelViewController.swift; sourceTree = "<group>"; };
+		1BF7281E261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeModelDetailsViewController.swift; sourceTree = "<group>"; };
+		1BF72823261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeModelDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		1BF72828261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeModelSelection.swift; sourceTree = "<group>"; };
+		1BF72831261C8EF300A0ED4F /* terms_conditions.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms_conditions.html; sourceTree = "<group>"; };
+		1BF72832261C8EF300A0ED4F /* open_source_licenses.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = open_source_licenses.html; sourceTree = "<group>"; };
+		1BF72838261C907000A0ED4F /* PrivacyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPageViewController.swift; sourceTree = "<group>"; };
+		1BF72840261CA0B200A0ED4F /* LubePartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LubePartsViewController.swift; sourceTree = "<group>"; };
+		1BF72849261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesNHalmetViewController.swift; sourceTree = "<group>"; };
+		1BF7284E261CA7A400A0ED4F /* LubePartsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LubePartsTableViewCell.swift; sourceTree = "<group>"; };
+		1BF72853261CA97A00A0ED4F /* LubePartsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LubePartsModel.swift; sourceTree = "<group>"; };
 		25ECA0D90A781BF2673F8290 /* Pods_YamahaRidersClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YamahaRidersClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30465FA0EB2CCE6855A7D028 /* Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub-YamahaRidersClubUITests/Pods-YamahaRidersClub-YamahaRidersClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5687E5E4DD99F9B971E5174D /* Pods-YamahaRidersClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YamahaRidersClub.release.xcconfig"; path = "Target Support Files/Pods-YamahaRidersClub/Pods-YamahaRidersClub.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +251,7 @@
 		1BAA6C0625FA0F3C0050EDE0 /* YamahaRidersClub */ = {
 			isa = PBXGroup;
 			children = (
+				1BF7282D261C8E9C00A0ED4F /* OtherAsserts */,
 				1B0BFDBD260540BE00939FBA /* Constants */,
 				1B1D76D6260402340024B504 /* Views */,
 				1BEC5F772602B26100664EA6 /* Controllers */,
@@ -273,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */,
+				1BF72828261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,6 +325,9 @@
 				1B0BFEB32610099600939FBA /* ProductstListTableViewCell.swift */,
 				1B0BFEBB26103B7D00939FBA /* ProductsModel.swift */,
 				1B0BFEC826107AD600939FBA /* MyRideTableViewCell.swift */,
+				1BF72823261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift */,
+				1BF7284E261CA7A400A0ED4F /* LubePartsTableViewCell.swift */,
+				1BF72853261CA97A00A0ED4F /* LubePartsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,8 +346,23 @@
 				1B0BFEA4260F099600939FBA /* MyRideViewController.swift */,
 				1B0BFEA92610002300939FBA /* PartsViewController.swift */,
 				1B0BFEAE2610052600939FBA /* ProductListViewController.swift */,
+				1BF72819261B167600A0ED4F /* GeneralUserBikeModelViewController.swift */,
+				1BF7281E261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift */,
+				1BF72838261C907000A0ED4F /* PrivacyPageViewController.swift */,
+				1BF72840261CA0B200A0ED4F /* LubePartsViewController.swift */,
+				1BF72849261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift */,
+				1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BF7282D261C8E9C00A0ED4F /* OtherAsserts */ = {
+			isa = PBXGroup;
+			children = (
+				1BF72832261C8EF300A0ED4F /* open_source_licenses.html */,
+				1BF72831261C8EF300A0ED4F /* terms_conditions.html */,
+			);
+			path = OtherAsserts;
 			sourceTree = "<group>";
 		};
 		6670804D7F99B8CDC7D0D19B /* Frameworks */ = {
@@ -452,8 +496,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF72833261C8EF400A0ED4F /* terms_conditions.html in Resources */,
 				1BAA6C1725FA0F3F0050EDE0 /* LaunchScreen.storyboard in Resources */,
 				1BAA6C1425FA0F3F0050EDE0 /* Assets.xcassets in Resources */,
+				1BF72834261C8EF400A0ED4F /* open_source_licenses.html in Resources */,
 				1BAA6C0F25FA0F3C0050EDE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,10 +635,13 @@
 				1B0BFEAA2610002300939FBA /* PartsViewController.swift in Sources */,
 				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
+				1BF72841261CA0B200A0ED4F /* LubePartsViewController.swift in Sources */,
 				1B0BFEBC26103B7D00939FBA /* ProductsModel.swift in Sources */,
 				1B0BFE87260EDC3600939FBA /* OfferViewController.swift in Sources */,
 				1BEC5FC72603F44800664EA6 /* WeatherViewController.swift in Sources */,
 				1B0BFEA5260F099600939FBA /* MyRideViewController.swift in Sources */,
+				1BF7281A261B167700A0ED4F /* GeneralUserBikeModelViewController.swift in Sources */,
+				1BF7284F261CA7A400A0ED4F /* LubePartsTableViewCell.swift in Sources */,
 				1B0BFEB42610099600939FBA /* ProductstListTableViewCell.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
 				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
@@ -600,24 +649,31 @@
 				1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
 				1B0BFE91260EF2C900939FBA /* DealerModel.swift in Sources */,
+				1BF72824261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
+				1BF72829261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift in Sources */,
 				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,
 				1B0BFEA0260F090B00939FBA /* MyRideModel.swift in Sources */,
 				1B0BFEAF2610052600939FBA /* ProductListViewController.swift in Sources */,
 				1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */,
 				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
 				1B0BFDD72607151200939FBA /* ArticleTableViewCell.swift in Sources */,
+				1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */,
 				1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */,
+				1BF7284A261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift in Sources */,
 				1BEC5F8B2602BCED00664EA6 /* ArticleManager.swift in Sources */,
 				1B0BFE9B260EFF2B00939FBA /* DealerTableViewCell.swift in Sources */,
 				1BEC5F7E2602BB6400664EA6 /* ArticleModel.swift in Sources */,
 				1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */,
+				1BF72839261C907000A0ED4F /* PrivacyPageViewController.swift in Sources */,
 				1B0BFE8C260EE4F600939FBA /* OfferTableViewCell.swift in Sources */,
 				1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */,
+				1BF72854261CA97A00A0ED4F /* LubePartsModel.swift in Sources */,
 				1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */,
+				1BF7281F261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift in Sources */,
 				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
 				1B0BFEC926107AD700939FBA /* MyRideTableViewCell.swift in Sources */,
 				1B0BFDC9260658CF00939FBA /* QRScannerViewController.swift in Sources */,

@@ -23,7 +23,10 @@ class MenuViewController: UITableViewController {
                                         MenuListItem(image: "bicycle", itemName: "My Ride"),
                                         MenuListItem(image: "wind", itemName: "Weather"),
                                         MenuListItem(image: "power", itemName: "Log out"),
-                                        MenuListItem(image: "info", itemName: "About")]
+                                        MenuListItem(image: "info", itemName: "About"),
+                                        MenuListItem(image: "list.bullet.rectangle", itemName: "Privacy Policy"),
+                                        MenuListItem(image: "list.bullet.rectangle", itemName: "License"),
+    ]
     
     
     
