@@ -26,7 +26,7 @@ class GeneralUserBikeModelDetailsViewController: UIViewController, UITableViewDa
         
         cell?.partsNameLablel.text = listOfElements[indexPath.row].partsName
         cell?.partsNoLabel.text = listOfElements[indexPath.row].partsNo
-        cell?.mRPLabel.text = listOfElements[indexPath.row].mRP
+        cell?.mRPLabel.text = "\(listOfElements[indexPath.row].mRP)/-"
         
 
         return cell ?? UITableViewCell()

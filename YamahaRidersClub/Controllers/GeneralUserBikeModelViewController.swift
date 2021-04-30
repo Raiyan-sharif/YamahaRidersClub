@@ -10,24 +10,19 @@ import Alamofire
 import SwiftyJSON
 class GeneralUserBikeModelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //    let cellSpacingHeight: CGFloat = 5
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.bikeModelNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-//        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
-        print(indexPath.row)
-        cell.textLabel?.text = bikeModelNames[indexPath.row]
-        cell.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cell.contentView.layer.borderWidth = 2.0
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GeneralUserBikeTableViewCell", for: indexPath) as! GeneralUserBikeTableViewCell
         
-        cell.contentView.layer.borderColor = #colorLiteral(red: 0.1790010631, green: 0.06708221883, blue: 0.6007973552, alpha: 1)
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.imageView?.image = #imageLiteral(resourceName: "ic_launcher_foreground")
-//        tableView.layoutMargins.bottom = 10.0
-        
-        
+        cell.layer.borderWidth = 2.0
+        cell.layer.cornerRadius = 14.0
+        cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+        cell.titleName.text = bikeModelNames[indexPath.row]
+
         
         
 
@@ -61,6 +56,8 @@ class GeneralUserBikeModelViewController: UIViewController, UITableViewDataSourc
         tableView.dataSource = self
         tableView.delegate = self
         fethDataGeneralUserBikeModel()
+        
+        
         // Do any additional setup after loading the view.
     }
     

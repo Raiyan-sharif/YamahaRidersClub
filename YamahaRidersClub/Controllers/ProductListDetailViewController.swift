@@ -62,7 +62,7 @@ class ProductListDetailViewController: UIViewController
                     if(feature.count > 0){
                         for i in 0 ... feature.count-1{
                             self.featureLabel.text = (self.featureLabel.text ?? "") +
-                            (json["Features"][i]["FeatureName"].string ?? "")
+                            "\n\(json["Features"][i]["FeatureName"].string ?? "")"
                             
                             self.featureList.append(json["Features"][i]["FeatureName"].string ?? "")
                         }
@@ -72,8 +72,8 @@ class ProductListDetailViewController: UIViewController
                     let specification = json["Specifications"]
                     if(specification.count > 0){
                         for i in 0 ... specification.count-1{
-                            self.specificationLabel.text = (self.specificationLabel.text ?? "") + "Specification Type: \(json["Specifications"][i]["SpecificationType"].string ?? "")\n Specification Name: \(json["Specifications"][i]["SpecificationName"].string ?? "")\n Specification Value: \(json["Specifications"][i]["SpecificationValue"].string ?? "")"
-                            self.specificationList.append("Specification Type: \(json["Specifications"][i]["SpecificationType"].string ?? "")\n Specification Name: \(json["Specifications"][i]["SpecificationName"].string ?? "")\n SpecificationValue: \(json["Specifications"][i]["SpecificationValue"].string ?? "")")
+                            self.specificationLabel.text = (self.specificationLabel.text ?? "") + "\nSpecification Type:\n\(json["Specifications"][i]["SpecificationType"].string ?? "")\nSpecification Name:\n\(json["Specifications"][i]["SpecificationName"].string ?? "")\nSpecification Value:\n\(json["Specifications"][i]["SpecificationValue"].string ?? "")\n"
+                            self.specificationList.append("\nSpecification Type: \(json["Specifications"][i]["SpecificationType"].string ?? "")\n Specification Name: \(json["Specifications"][i]["SpecificationName"].string ?? "")\n SpecificationValue: \(json["Specifications"][i]["SpecificationValue"].string ?? "")\n")
                         }
                     }
                     

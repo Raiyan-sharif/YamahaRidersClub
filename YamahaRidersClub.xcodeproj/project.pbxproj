@@ -46,6 +46,8 @@
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
 		1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */; };
 		1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */; };
+		1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */; };
+		1BDFDF29263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
@@ -136,6 +138,8 @@
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDetailViewController.swift; sourceTree = "<group>"; };
 		1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalmetTableViewCell.swift; sourceTree = "<group>"; };
+		1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeTableViewCell.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				1BF7284E261CA7A400A0ED4F /* LubePartsTableViewCell.swift */,
 				1BF72853261CA97A00A0ED4F /* LubePartsModel.swift */,
 				1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */,
+				1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */,
+				1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -647,6 +653,7 @@
 				1BF7284F261CA7A400A0ED4F /* LubePartsTableViewCell.swift in Sources */,
 				1B0BFEB42610099600939FBA /* ProductstListTableViewCell.swift in Sources */,
 				1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */,
+				1BDFDF29263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift in Sources */,
 				1BEC5FCC2603F4C200664EA6 /* WeatherManager.swift in Sources */,
 				1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */,
 				1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */,
@@ -657,6 +664,7 @@
 				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
+				1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */,
 				1BF72829261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift in Sources */,
 				1B1C174B25FF3B07008FF687 /* MenuTitleTableViewCell.swift in Sources */,
 				1B0BFEA0260F090B00939FBA /* MyRideModel.swift in Sources */,
