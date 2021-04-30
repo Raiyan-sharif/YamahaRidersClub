@@ -69,6 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         if userDefaults.string(forKey: "mobileno") != nil && loginStatus == true{
 //
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
             let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
 //            let testVc = storyboard?.instantiateViewController(identifier: "WeatherViewController") as! WeatherViewController
              
@@ -109,6 +110,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @objc
     func signUpTapped(sender:UITapGestureRecognizer) {
         print("Sign up Page")
+        //PhoneVerificationViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PhoneVerificationViewController") as! PhoneVerificationViewController
+//            let testVc = storyboard?.instantiateViewController(identifier: "WeatherViewController") as! WeatherViewController
+         
+         navigationController?.pushViewController(vc,
+         animated: false)
     }
     
     @objc

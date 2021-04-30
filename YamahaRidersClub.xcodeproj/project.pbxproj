@@ -48,6 +48,7 @@
 		1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */; };
 		1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */; };
 		1BDFDF29263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */; };
+		1BDFDF2E263BC5FE00D5F975 /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
@@ -140,6 +141,7 @@
 		1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalmetTableViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeTableViewCell.swift; sourceTree = "<group>"; };
+		1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				1BF72840261CA0B200A0ED4F /* LubePartsViewController.swift */,
 				1BF72849261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift */,
 				1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */,
+				1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				1B0BFEAF2610052600939FBA /* ProductListViewController.swift in Sources */,
 				1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */,
 				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
+				1BDFDF2E263BC5FE00D5F975 /* PhoneVerificationViewController.swift in Sources */,
 				1B0BFDD72607151200939FBA /* ArticleTableViewCell.swift in Sources */,
 				1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */,
 				1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */,

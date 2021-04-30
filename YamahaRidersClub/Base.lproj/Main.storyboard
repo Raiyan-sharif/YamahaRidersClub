@@ -94,16 +94,25 @@
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k6C-ph-JsO" secondAttribute="bottom" id="oPq-bv-sdS"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YRC-BD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aN-9M-uLQ">
+                                <rect key="frame" x="175.5" y="289" width="63.5" height="20.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8aU-0u-mrq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BjJ-Uq-o8O"/>
                             <constraint firstItem="ARM-h8-8SS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.35" id="OOZ-9W-C23"/>
+                            <constraint firstItem="1aN-9M-uLQ" firstAttribute="centerX" secondItem="ggZ-85-9Jg" secondAttribute="centerX" id="Rng-YG-LiL"/>
                             <constraint firstItem="ARM-h8-8SS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cP0-0a-9Ic"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8aU-0u-mrq" secondAttribute="bottom" id="hMT-NM-0Vt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ARM-h8-8SS" secondAttribute="top" id="jVA-Mn-jp0"/>
                             <constraint firstItem="8aU-0u-mrq" firstAttribute="top" secondItem="ARM-h8-8SS" secondAttribute="bottom" id="jnM-Aw-Muk"/>
+                            <constraint firstItem="1aN-9M-uLQ" firstAttribute="top" secondItem="ggZ-85-9Jg" secondAttribute="bottom" constant="3.5" id="nxH-nd-bsJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8aU-0u-mrq" secondAttribute="trailing" id="oPB-af-cGV"/>
                         </constraints>
                     </view>
@@ -119,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1110" y="-504"/>
+            <point key="canvasLocation" x="-1110.144927536232" y="-504.24107142857139"/>
         </scene>
         <!--My Ride View Controller-->
         <scene sceneID="fH1-JC-1tR">
@@ -904,6 +913,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zd-kt-VHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1488" y="-844"/>
+        </scene>
+        <!--Phone Verification View Controller-->
+        <scene sceneID="uU8-hz-10W">
+            <objects>
+                <viewController storyboardIdentifier="PhoneVerificationViewController" id="VhS-81-swf" customClass="PhoneVerificationViewController" customModule="YamahaRidersClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vFt-iM-xAe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-sY-hyv">
+                                <rect key="frame" x="32" y="108" width="350" height="103.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq6-6V-Qgd">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01633673445" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Jd-xn-Egg">
+                                        <rect key="frame" x="0.0" y="28.5" width="350" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="continue" textContentType="tel"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jei-tL-agt">
+                                        <rect key="frame" x="0.0" y="70.5" width="350" height="33"/>
+                                        <color key="backgroundColor" red="0.1650789678" green="0.073133520780000003" blue="0.57652884719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="SUBMIT">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitBtnPressed:" destination="VhS-81-swf" eventType="touchUpInside" id="gAx-wS-fJg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aq6-6V-Qgd" firstAttribute="width" secondItem="LCc-sY-hyv" secondAttribute="width" id="Ze8-e6-8dB"/>
+                                    <constraint firstItem="5Jd-xn-Egg" firstAttribute="width" secondItem="LCc-sY-hyv" secondAttribute="width" id="dRV-Ef-cGN"/>
+                                    <constraint firstItem="jei-tL-agt" firstAttribute="width" secondItem="LCc-sY-hyv" secondAttribute="width" id="jdv-eg-MXV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qq1-aM-c66"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qq1-aM-c66" firstAttribute="trailing" secondItem="LCc-sY-hyv" secondAttribute="trailing" constant="32" id="2Ag-gR-N8r"/>
+                            <constraint firstItem="LCc-sY-hyv" firstAttribute="leading" secondItem="qq1-aM-c66" secondAttribute="leading" constant="32" id="L77-g1-l5D"/>
+                            <constraint firstItem="LCc-sY-hyv" firstAttribute="top" secondItem="qq1-aM-c66" secondAttribute="top" constant="64" id="tok-Fs-8rU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mobileNoTF" destination="5Jd-xn-Egg" id="paJ-VC-1l7"/>
+                        <outlet property="submitBtn" destination="jei-tL-agt" id="1x4-Zu-axf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTj-Qv-sOi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1841" y="135"/>
         </scene>
         <!--Privacy Page View Controller-->
         <scene sceneID="t8g-JZ-WwT">
