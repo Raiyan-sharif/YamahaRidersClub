@@ -86,7 +86,7 @@
                                         <color key="backgroundColor" red="0.1650789678" green="0.073133520780000003" blue="0.57652884719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.090196078431372548" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.16470588235294117" green="0.074509803921568626" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="k6C-ph-JsO" firstAttribute="centerX" secondItem="8aU-0u-mrq" secondAttribute="centerX" id="Vec-FS-bqn"/>
                                     <constraint firstItem="k6C-ph-JsO" firstAttribute="top" secondItem="8aU-0u-mrq" secondAttribute="top" constant="20" id="XIC-jB-5H9"/>

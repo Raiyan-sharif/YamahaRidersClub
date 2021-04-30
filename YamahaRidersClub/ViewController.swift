@@ -49,6 +49,10 @@ class ViewController: UIViewController, UITextFieldDelegate{
         forgetPasswordLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1647058824, green: 0.07450980392, blue: 0.5764705882, alpha: 1)
+        
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.signUpTapped))
         signUpLabel.isUserInteractionEnabled = true
         signUpLabel.addGestureRecognizer(tap)

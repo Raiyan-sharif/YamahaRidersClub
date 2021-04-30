@@ -98,7 +98,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         title = "YRC-BD"
         ItemMenuIcon.image = UIImage(systemName: "rectangle.split.3x3")
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1794194281, green: 0.06704645604, blue: 0.6007958055, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1788666844, green: 0.06861508638, blue: 0.6007255912, alpha: 1)
         
         
         loadAllEvents()
