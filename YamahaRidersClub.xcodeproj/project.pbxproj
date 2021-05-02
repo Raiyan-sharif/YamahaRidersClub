@@ -49,6 +49,8 @@
 		1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */; };
 		1BDFDF29263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */; };
 		1BDFDF2E263BC5FE00D5F975 /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */; };
+		1BDFDF33263D0DE200D5F975 /* OTPVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF32263D0DE200D5F975 /* OTPVerificationViewController.swift */; };
+		1BDFDF38263D19A800D5F975 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF37263D19A700D5F975 /* SignUpViewController.swift */; };
 		1BEC5F6E2602928300664EA6 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F6D2602928300664EA6 /* LoginData.swift */; };
 		1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F72260292D200664EA6 /* LoginManager.swift */; };
 		1BEC5F792602B29500664EA6 /* MobileVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */; };
@@ -142,6 +144,8 @@
 		1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalmetTableViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserBikeTableViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
+		1BDFDF32263D0DE200D5F975 /* OTPVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationViewController.swift; sourceTree = "<group>"; };
+		1BDFDF37263D19A700D5F975 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1BEC5F6D2602928300664EA6 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		1BEC5F72260292D200664EA6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		1BEC5F782602B29500664EA6 /* MobileVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileVerificationViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				1BF72849261CA0E900A0ED4F /* AccessoriesNHalmetViewController.swift */,
 				1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */,
 				1BDFDF2D263BC5FD00D5F975 /* PhoneVerificationViewController.swift */,
+				1BDFDF32263D0DE200D5F975 /* OTPVerificationViewController.swift */,
+				1BDFDF37263D19A700D5F975 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				1BF72824261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
 				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
+				1BDFDF33263D0DE200D5F975 /* OTPVerificationViewController.swift in Sources */,
 				1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */,
 				1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */,
 				1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */,
@@ -695,6 +702,7 @@
 				1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */,
 				1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */,
 				1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */,
+				1BDFDF38263D19A800D5F975 /* SignUpViewController.swift in Sources */,
 				1B0BFDDC260726EA00939FBA /* EventModel.swift in Sources */,
 				1B1C175025FF3B4E008FF687 /* MenuItemTableViewCell.swift in Sources */,
 			);

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PhoneVerificationViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var mobileNoTF: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
+    var userDefaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +44,43 @@ class PhoneVerificationViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
         return false
     }
+    
+    func generateOTP(mobileNo:String){
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        alert.view.tintColor = UIColor.black
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
+        AF.request("http://apps.acibd.com/apps/yrc/riderinfo/otpgeneration?mobileno=\(mobileNo)").response { response in
+//            debugPrint(response.debugDescription)
+            if let res = response.value{
+                if let finalData = res{
+                    let swiftyJsonVar = JSON(finalData)
+                    print(swiftyJsonVar)
+                    if(swiftyJsonVar["success"]==1){
+                        self.userDefaults.setValue(mobileNo, forKey: "mobileno")
+                        self.dismiss(animated: false, completion: nil)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPVerificationViewController" ) as! OTPVerificationViewController
+                        self.navigationController?.pushViewController(vc,
+                        animated: true)
+                        
+                    }
+                    
+                    
+                    
+                    
+                   
+                }
+                
+            }
+        }
+    }
 
 
     @IBAction func submitBtnPressed(_ sender: UIButton) {
@@ -58,7 +98,7 @@ class PhoneVerificationViewController: UIViewController, UITextFieldDelegate{
             
         }
         else{
-            
+            self.generateOTP(mobileNo: mobileNoTF.text ?? "")
         }
         
     }
