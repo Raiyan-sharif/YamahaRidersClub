@@ -30,10 +30,14 @@ class OTPVerificationViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(OTPVerificationViewController.resendTextFieldPressed))
         resendLabel.isUserInteractionEnabled = true
         resendLabel.addGestureRecognizer(tap)
+//        let fileManager = FileManager.default
+//        var sqliteDB: COpaquePointer = nil
         // Do any additional setup after loading the view.
         if userDefaults.string(forKey: "mobileno") != nil{
             print(userDefaults.string(forKey: "mobileno") ?? "")
         }
+        
+        
     }
     
 
@@ -92,6 +96,7 @@ class OTPVerificationViewController: UIViewController {
                 if let finalData = res{
                     let swiftyJsonVar = JSON(finalData)
                     print(swiftyJsonVar)
+
                     if(swiftyJsonVar["success"]==1){
                         self.userDefaults.setValue(mobileNo, forKey: "mobileno")
                         self.dismiss(animated: false, completion: nil)
@@ -121,6 +126,88 @@ class OTPVerificationViewController: UIViewController {
                 if let finalData = res{
                     let swiftyJsonVar = JSON(finalData)
                     print(swiftyJsonVar)
+                    
+                    //                    districtList = []
+                                        let districtListData = swiftyJsonVar["district"]
+                                        for i in 0 ... districtListData.count-1{
+                                            let districtCode = swiftyJsonVar["district"][i]["DistrictCode"].string ?? ""
+                                            let districtName = swiftyJsonVar["district"][i]["DistrictName"].string ?? ""
+                                            let temp = district(districtCode: districtCode, districtName: districtName)
+                                            VerificationResponseModel.districtList.append(temp)
+                                            
+                                        }
+                                        
+                    //                    upazillaList = []
+                                        
+                                        let upazillaData = swiftyJsonVar["upazilla"]
+                                        for i in 0 ... upazillaData.count-1{
+                                            let districtCode = swiftyJsonVar["upazilla"][i]["DistrictCode"].string ?? ""
+                                            let upazillaCode = swiftyJsonVar["upazilla"][i]["UpazillaCode"].string ?? ""
+                                            let upazillaName = swiftyJsonVar["upazilla"][i]["UpazillaName"].string ?? ""
+                                            let temp = upazilla(districtCode: districtCode, upazillaCode: upazillaCode, upazillaName: upazillaName)
+                                            VerificationResponseModel.upazillaList.append(temp)
+                                            
+                                        }
+                    //                    customerlistArray = []
+                                        let customerlistData = swiftyJsonVar["customerlist"]
+                                        for i in 0 ... customerlistData.count-1{
+                                            let districtCode = swiftyJsonVar["customerlist"][i]["DistrictCode"].string ?? ""
+                                            let districtName = swiftyJsonVar["customerlist"][i]["DistrictName"].string ?? ""
+                                            let customerCode = swiftyJsonVar["customerlist"][i]["CustomerCode"].string ?? ""
+                                            let customerName = swiftyJsonVar["customerlist"][i]["CustomerName"].string ?? ""
+                                            let address = swiftyJsonVar["customerlist"][i]["Address"].string ?? ""
+                                            
+                                            let temp = customerlist(districtCode: districtCode, districtName: districtName, customerCode: customerCode, customerName: customerName, address: address)
+                                            VerificationResponseModel.customerlistArray.append(temp)
+                                            
+                                        }
+                    //                    brandlistArray = []
+                                        let brandlistData = swiftyJsonVar["brandlist"]
+                                        for i in 0 ... brandlistData.count-1{
+                                            let brandCode = swiftyJsonVar["brandlist"][i]["BrandCode"].string ?? ""
+                                            let brandName = swiftyJsonVar["brandlist"][i]["BrandName"].string ?? ""
+                                        
+                                            
+                                            let temp = brandlist(brandCode: brandCode, brandName: brandName)
+                                            VerificationResponseModel.brandlistArray.append(temp)
+                                            
+                                        }
+                    //                    productlistArray = []
+                                        let productlistData = swiftyJsonVar["productlist"]
+                                        for i in 0 ... productlistData.count-1{
+                                            let brandCode = swiftyJsonVar["productlist"][i]["BrandCode"].string ?? ""
+                                            let brandName = swiftyJsonVar["productlist"][i]["BrandName"].string ?? ""
+                                            let productCode = swiftyJsonVar["productlist"][i]["ProductCode"].string ?? ""
+                                            let productName = swiftyJsonVar["productlist"][i]["ProductName"].string ?? ""
+                                        
+                                            
+                                            let temp = productlist(brandCode: brandCode, brandName: brandName, productCode: productCode, productName: productName)
+                                            VerificationResponseModel.productlistArray.append(temp)
+                                            
+                                        }
+                    //                    yrcareaList = []
+                                        let yrcareaListData = swiftyJsonVar["yrcarea"]
+                                        for i in 0 ... yrcareaListData.count-1{
+                                            let areaID = swiftyJsonVar["yrcarea"][i]["AreaID"].string ?? ""
+                                            let areaName = swiftyJsonVar["yrcarea"][i]["AreaName"].string ?? ""
+                                            let status = swiftyJsonVar["yrcarea"][i]["Status"].string ?? ""
+                                        
+                                            let temp = yrcarea(areaID: areaID, areaName: areaName, status: status)
+                                            VerificationResponseModel.yrcareaList.append(temp)
+                                            
+                                        }
+                                        
+                    //                    ridingstyleList = []
+                                        let ridingstyleData = swiftyJsonVar["ridingstyle"]
+                                        for i in 0 ... ridingstyleData.count-1{
+                                            let ridingTypeID = swiftyJsonVar["ridingstyle"][i]["RidingTypeID"].string ?? ""
+                                            let ridingTypeName = swiftyJsonVar["ridingstyle"][i]["RidingTypeName"].string ?? ""
+                                        
+                                            let temp = ridingstyle(ridingTypeID: ridingTypeID, ridingTypeName: ridingTypeName)
+                                            VerificationResponseModel.ridingstyleList.append(temp)
+                                            
+                                        }
+                    
                     if(swiftyJsonVar["success"]==1){
                         self.userDefaults.setValue(mobileNo, forKey: "mobileno")
                         self.dismiss(animated: false, completion: nil)
