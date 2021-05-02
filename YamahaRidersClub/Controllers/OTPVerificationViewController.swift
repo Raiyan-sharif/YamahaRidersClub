@@ -207,6 +207,18 @@ class OTPVerificationViewController: UIViewController {
                                             VerificationResponseModel.ridingstyleList.append(temp)
                                             
                                         }
+//                    occupationData
+                    let occupationDData = swiftyJsonVar["occupation"]
+                    for i in 0 ... occupationDData.count-1{
+                        let occupationId = swiftyJsonVar["occupation"][i]["OccupationId"].string ?? ""
+                        let occupationName = swiftyJsonVar["occupation"][i]["OccupationName"].string ?? ""
+                        let active = swiftyJsonVar["occupation"][i]["Active"].string ?? ""
+                        let sL = swiftyJsonVar["occupation"][i]["SL"].string ?? ""
+                    
+                        let temp = occupationData(occupationId: occupationId, occupationName: occupationName, active: active, sL: sL)
+                        VerificationResponseModel.occupationList.append(temp)
+                        
+                    }
                     
                     if(swiftyJsonVar["success"]==1){
                         self.userDefaults.setValue(mobileNo, forKey: "mobileno")

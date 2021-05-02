@@ -44,6 +44,7 @@
 		1BAA6C2225FA0F3F0050EDE0 /* YamahaRidersClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2125FA0F3F0050EDE0 /* YamahaRidersClubTests.swift */; };
 		1BAA6C2D25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */; };
 		1BAA6C3F25FA93D50050EDE0 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */; };
+		1BB68301263EE19E00191088 /* SignupThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB68300263EE19E00191088 /* SignupThirdViewController.swift */; };
 		1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */; };
 		1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */; };
 		1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */; };
@@ -141,6 +142,7 @@
 		1BAA6C2C25FA0F3F0050EDE0 /* YamahaRidersClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamahaRidersClubUITests.swift; sourceTree = "<group>"; };
 		1BAA6C2E25FA0F3F0050EDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		1BB68300263EE19E00191088 /* SignupThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdViewController.swift; sourceTree = "<group>"; };
 		1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDetailViewController.swift; sourceTree = "<group>"; };
 		1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalmetTableViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				1BDFDF32263D0DE200D5F975 /* OTPVerificationViewController.swift */,
 				1BDFDF37263D19A700D5F975 /* SignUpViewController.swift */,
 				1BDFDF52263E964F00D5F975 /* SignUpSecondViewController.swift */,
+				1BB68300263EE19E00191088 /* SignupThirdViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */,
 				1B0BFDD2260714E900939FBA /* ArticleViewController.swift in Sources */,
 				1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */,
+				1BB68301263EE19E00191088 /* SignupThirdViewController.swift in Sources */,
 				1B0BFE91260EF2C900939FBA /* DealerModel.swift in Sources */,
 				1BF72824261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,

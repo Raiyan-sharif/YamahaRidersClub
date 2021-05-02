@@ -1104,10 +1104,10 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BvY-un-86z">
-                                <rect key="frame" x="12" y="124" width="390" height="738"/>
+                                <rect key="frame" x="12" y="124" width="390" height="638"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-DE-E3M">
-                                        <rect key="frame" x="16" y="0.0" width="358" height="1114.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="358" height="1072.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Area" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xds-ju-0jR">
                                                 <rect key="frame" x="135.5" y="0.0" width="87.5" height="20.5"/>
@@ -1116,8 +1116,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72y-c9-VDj">
-                                                <rect key="frame" x="19" y="28.5" width="320" height="216"/>
+                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72y-c9-VDj">
+                                                <rect key="frame" x="89.5" y="28.5" width="179" height="216"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Name ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDb-SM-29u">
                                                 <rect key="frame" x="131" y="252.5" width="96.5" height="20.5"/>
@@ -1140,82 +1140,85 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-Lg-kBG">
-                                                <rect key="frame" x="19" y="351.5" width="320" height="216"/>
+                                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-Lg-kBG">
+                                                <rect key="frame" x="89.5" y="351.5" width="179" height="216"/>
                                             </pickerView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ME1RG0749G0045075" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qge-1N-p6B">
-                                                <rect key="frame" x="0.0" y="575.5" width="358" height="34"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Date of Birth ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYl-wd-3Ka">
-                                                <rect key="frame" x="105" y="617.5" width="148" height="20.5"/>
+                                                <rect key="frame" x="105" y="575.5" width="148" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-Bo-ycB">
-                                                <rect key="frame" x="19" y="646" width="320" height="216"/>
-                                            </pickerView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Li-hv-Iq3">
+                                                <rect key="frame" x="19" y="604" width="320" height="216"/>
+                                                <date key="maximumDate" timeIntervalSinceReferenceDate="662641200">
+                                                    <!--2021-12-31 11:00:00 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="datePickerSelectionAction:" destination="oeL-FO-f6P" eventType="valueChanged" id="d7z-5b-gS4"/>
+                                                </connections>
+                                            </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Email ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA3-wb-OVa">
-                                                <rect key="frame" x="133" y="870" width="92.5" height="20.5"/>
+                                                <rect key="frame" x="133" y="828" width="92.5" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ME1RG0749G0045075" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-x1-ADC">
-                                                <rect key="frame" x="0.0" y="898.5" width="358" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-x1-ADC">
+                                                <rect key="frame" x="0.0" y="856.5" width="358" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your NID/Passport/Birth Certificate ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrU-rA-D5F">
-                                                <rect key="frame" x="41" y="940.5" width="276.5" height="20.5"/>
+                                                <rect key="frame" x="41" y="898.5" width="276.5" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ME1RG0749G0045075" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQl-bH-biG">
-                                                <rect key="frame" x="0.0" y="969" width="358" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQl-bH-biG">
+                                                <rect key="frame" x="0.0" y="927" width="358" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Driving License Number ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-Oo-CLZ">
-                                                <rect key="frame" x="62" y="1011" width="234" height="20.5"/>
+                                                <rect key="frame" x="62" y="969" width="234" height="20.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ME1RG0749G0045075" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPK-71-hCl">
-                                                <rect key="frame" x="0.0" y="1039.5" width="358" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chasis" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vPK-71-hCl">
+                                                <rect key="frame" x="0.0" y="997.5" width="358" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0R-Vh-feW">
-                                                <rect key="frame" x="156" y="1081.5" width="46" height="33"/>
+                                                <rect key="frame" x="156" y="1039.5" width="46" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <state key="normal" title="NEXT">
                                                     <color key="titleColor" red="0.1650789678" green="0.073133520780000003" blue="0.57652884719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextBtnPressed:" destination="oeL-FO-f6P" eventType="touchUpInside" id="3c1-nd-Rlm"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="VWy-x1-ADC" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" id="2Pg-TF-ZTA"/>
-                                            <constraint firstItem="qge-1N-p6B" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" id="6GS-lr-IU0"/>
                                             <constraint firstItem="RQl-bH-biG" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" id="9J5-dd-pT1"/>
                                             <constraint firstItem="vPK-71-hCl" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" id="IR2-ag-GWr"/>
+                                            <constraint firstItem="72y-c9-VDj" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" multiplier="0.5" id="QXv-tY-ZqX"/>
+                                            <constraint firstItem="MuD-Lg-kBG" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" multiplier="0.5" id="XVP-xP-BA4"/>
                                             <constraint firstItem="4XJ-5H-bGJ" firstAttribute="width" secondItem="8mM-DE-E3M" secondAttribute="width" id="coK-Ux-jT6"/>
                                         </constraints>
                                     </stackView>
@@ -1225,7 +1228,7 @@
                                     <constraint firstItem="8mM-DE-E3M" firstAttribute="centerX" secondItem="BvY-un-86z" secondAttribute="centerX" id="QNj-aa-lI2"/>
                                     <constraint firstItem="8mM-DE-E3M" firstAttribute="leading" secondItem="BvY-un-86z" secondAttribute="leading" constant="16" id="Utd-ra-hbE"/>
                                     <constraint firstItem="8mM-DE-E3M" firstAttribute="top" secondItem="BvY-un-86z" secondAttribute="top" id="as0-fv-ebh"/>
-                                    <constraint firstAttribute="bottom" secondItem="8mM-DE-E3M" secondAttribute="bottom" id="vnN-wJ-0h1"/>
+                                    <constraint firstAttribute="bottom" secondItem="8mM-DE-E3M" secondAttribute="bottom" constant="300" id="vnN-wJ-0h1"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="abu-Dt-BZ7"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="vxH-Fp-OWY"/>
@@ -1239,13 +1242,157 @@
                             <constraint firstItem="BvY-un-86z" firstAttribute="leading" secondItem="jrA-gz-3x2" secondAttribute="leading" constant="12" id="dbC-lV-jCx"/>
                             <constraint firstItem="BvY-un-86z" firstAttribute="top" secondItem="iYk-lo-r5l" secondAttribute="bottom" constant="32" id="itL-uc-L8F"/>
                             <constraint firstItem="iYk-lo-r5l" firstAttribute="top" secondItem="jrA-gz-3x2" secondAttribute="top" constant="16" id="kQF-mA-Qs5"/>
-                            <constraint firstItem="jrA-gz-3x2" firstAttribute="bottom" secondItem="BvY-un-86z" secondAttribute="bottom" id="rLN-qC-ulP"/>
+                            <constraint firstItem="jrA-gz-3x2" firstAttribute="bottom" secondItem="BvY-un-86z" secondAttribute="bottom" constant="100" id="rLN-qC-ulP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateOfBirthPicker" destination="1Li-hv-Iq3" id="GlV-xB-Tyx"/>
+                        <outlet property="districtPicker" destination="72y-c9-VDj" id="Oys-bg-epO"/>
+                        <outlet property="drivingLCTF" destination="vPK-71-hCl" id="NBR-Pn-GW2"/>
+                        <outlet property="emailTF" destination="VWy-x1-ADC" id="jxF-6i-rNA"/>
+                        <outlet property="genderPicker" destination="MuD-Lg-kBG" id="m9J-DH-hqq"/>
+                        <outlet property="nameTF" destination="4XJ-5H-bGJ" id="4ao-4u-G0Y"/>
+                        <outlet property="nidTF" destination="RQl-bH-biG" id="k4W-Xy-n0t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7P-dl-stL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2462.3188405797105" y="1430.3571428571429"/>
+        </scene>
+        <!--Signup Third View Controller-->
+        <scene sceneID="5Jp-ef-DkY">
+            <objects>
+                <viewController storyboardIdentifier="SignupThirdViewController" id="ft0-sc-fMJ" customClass="SignupThirdViewController" customModule="YamahaRidersClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="89Z-Na-Y15">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-sZ-Ovr">
+                                <rect key="frame" x="84" y="60" width="246.5" height="32"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-li-4jH">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u1-RS-kDh">
+                                        <rect key="frame" x="128" y="0.0" width="118.5" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-Da-qKG">
+                                <rect key="frame" x="16" y="124" width="382" height="738"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cus-eJ-3TS">
+                                        <rect key="frame" x="16" y="0.0" width="333.5" height="1127"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Occupation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3l-gH-npO">
+                                                <rect key="frame" x="77.5" y="0.0" width="179" height="20.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-C0-g88">
+                                                <rect key="frame" x="66.5" y="28.5" width="200.5" height="216"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Maritial Status?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-NN-VBl">
+                                                <rect key="frame" x="89" y="252.5" width="156" height="20.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2J-tK-rXT">
+                                                <rect key="frame" x="66.5" y="281" width="200.5" height="216"/>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Present Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-Cy-vXR">
+                                                <rect key="frame" x="104" y="505" width="125.5" height="20.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-m4-wNE">
+                                                <rect key="frame" x="0.0" y="533.5" width="333.5" height="216"/>
+                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qfq-Zx-Fjy">
+                                                <rect key="frame" x="0.0" y="757.5" width="333.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permenent Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnC-hf-vSe">
+                                                <rect key="frame" x="92" y="799.5" width="150" height="20.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c38-EI-zUc">
+                                                <rect key="frame" x="0.0" y="828" width="333.5" height="216"/>
+                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WhF-R1-Qd2">
+                                                <rect key="frame" x="0.0" y="1052" width="333.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-sD-NCO">
+                                                <rect key="frame" x="144" y="1094" width="46" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="NEXT">
+                                                    <color key="titleColor" red="0.1650789678" green="0.073133520780000003" blue="0.57652884719999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Q2J-tK-rXT" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" multiplier="0.6" id="6vM-qq-3rV"/>
+                                            <constraint firstItem="kwy-m4-wNE" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" id="EFB-Oy-LOB"/>
+                                            <constraint firstItem="Qfq-Zx-Fjy" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" id="a3O-6L-wDd"/>
+                                            <constraint firstItem="HMQ-C0-g88" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" multiplier="0.6" id="dUk-Jx-vql"/>
+                                            <constraint firstItem="WhF-R1-Qd2" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" id="gep-oo-bH6"/>
+                                            <constraint firstItem="c38-EI-zUc" firstAttribute="width" secondItem="cus-eJ-3TS" secondAttribute="width" id="ivV-qd-hIN"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cus-eJ-3TS" firstAttribute="leading" secondItem="SZO-Da-qKG" secondAttribute="leading" constant="16" id="F9O-fm-YXp"/>
+                                    <constraint firstAttribute="bottom" secondItem="cus-eJ-3TS" secondAttribute="bottom" constant="400" id="Z0X-0U-hFw"/>
+                                    <constraint firstAttribute="trailing" secondItem="cus-eJ-3TS" secondAttribute="trailing" constant="16" id="ezO-hK-mC3"/>
+                                    <constraint firstItem="cus-eJ-3TS" firstAttribute="width" secondItem="SZO-Da-qKG" secondAttribute="width" multiplier="0.873124" id="iLv-Em-NWg"/>
+                                    <constraint firstItem="cus-eJ-3TS" firstAttribute="top" secondItem="SZO-Da-qKG" secondAttribute="top" id="ldw-s9-R1q"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="2RP-P5-5kl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1N4-79-zY8"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kle-tm-2bi"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.090196078430000007" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Wf-sZ-Ovr" firstAttribute="top" secondItem="kle-tm-2bi" secondAttribute="top" constant="16" id="8E8-O4-ZDU"/>
+                            <constraint firstItem="SZO-Da-qKG" firstAttribute="top" secondItem="1Wf-sZ-Ovr" secondAttribute="bottom" constant="32" id="DU4-dK-Ogp"/>
+                            <constraint firstItem="SZO-Da-qKG" firstAttribute="leading" secondItem="kle-tm-2bi" secondAttribute="leading" constant="16" id="N4h-5K-gTh"/>
+                            <constraint firstItem="kle-tm-2bi" firstAttribute="bottom" secondItem="SZO-Da-qKG" secondAttribute="bottom" id="S4J-kc-XgW"/>
+                            <constraint firstItem="1Wf-sZ-Ovr" firstAttribute="centerX" secondItem="kle-tm-2bi" secondAttribute="centerX" id="Wcc-cT-YbT"/>
+                            <constraint firstItem="SZO-Da-qKG" firstAttribute="centerX" secondItem="kle-tm-2bi" secondAttribute="centerX" id="rRt-aJ-s7j"/>
+                            <constraint firstItem="kle-tm-2bi" firstAttribute="trailing" secondItem="SZO-Da-qKG" secondAttribute="trailing" constant="16" id="xKB-2e-ous"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="maritalStatusPicker" destination="Q2J-tK-rXT" id="HBJ-ni-6gg"/>
+                        <outlet property="occupationPicker" destination="HMQ-C0-g88" id="r8d-EI-riK"/>
+                        <outlet property="permenantAddressTF" destination="WhF-R1-Qd2" id="hZI-aG-boG"/>
+                        <outlet property="permenetAddressPicker" destination="c38-EI-zUc" id="JkD-z2-tue"/>
+                        <outlet property="presentAddressPicker" destination="kwy-m4-wNE" id="NxX-NU-ZrE"/>
+                        <outlet property="presentAddressTF" destination="Qfq-Zx-Fjy" id="vEV-7s-naa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tF5-ai-ydN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2462.3188405797105" y="2106.6964285714284"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="0fN-M1-SkC">

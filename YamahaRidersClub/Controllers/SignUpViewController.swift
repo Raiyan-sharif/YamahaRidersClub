@@ -29,13 +29,14 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         print(row)
         print(component)
         if(component == 1){
-            VerificationResponseModel.selectedModel[component] = pickerData[row]
+            VerificationResponseModel.productCode = pickerDataCode[row]
         }
         else{
-            VerificationResponseModel.selectedModel[component] = VerificationResponseModel.brandlistArray[row].brandName
+            VerificationResponseModel.brandCode = VerificationResponseModel.brandlistArray[row].brandCode
             
         }
-        print(VerificationResponseModel.selectedModel[component])
+        print(VerificationResponseModel.brandCode)
+        print(VerificationResponseModel.productCode)
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -57,9 +58,11 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         else if(component == 0){
             modelSelectedCode = VerificationResponseModel.brandlistArray[row].brandCode
             pickerData = []
+            pickerDataCode = []
             for i in 0 ... VerificationResponseModel.productlistArray.count-1{
                 if VerificationResponseModel.productlistArray[i].brandCode == modelSelectedCode{
                     pickerData.append(VerificationResponseModel.productlistArray[i].productName)
+                    pickerDataCode.append(VerificationResponseModel.productlistArray[i].productCode)
                 }
             }
 //            VerificationResponseModel.selectedModel[0] = VerificationResponseModel.brandlistArray[row].brandName
@@ -75,6 +78,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var modelSelectPicker: UIPickerView!
     
     var pickerData: [String] = [String]()
+    var pickerDataCode: [String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,8 +87,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         engineTF.delegate = self
         chesisTF.delegate = self
       
-        pickerData =
-                []
+        pickerData = []
+        pickerDataCode = []
                 
         // Do any additional setup after loading the view.
     }
@@ -104,6 +108,8 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
+        VerificationResponseModel.engineNo = engineTF.text ?? ""
+        VerificationResponseModel.chasisNo = chesisTF.text ?? ""
         
         AF.request("http://apps.acibd.com/apps/yrc/syncdata/chassisvarified?engineno=\(engineTF.text ?? "")&chassisno=\(chesisTF.text ?? "")").response { response in
 //            debugPrint(response.debugDescription)
