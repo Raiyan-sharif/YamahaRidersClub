@@ -191,6 +191,13 @@ class SignupThirdViewController: UIViewController,UIPickerViewDelegate, UIPicker
         VerificationResponseModel.streetNo = presentAddressTF.text ?? ""
         print("Present Address: \(VerificationResponseModel.streetNo)")
         print("Permenent Address: \(VerificationResponseModel.permanentStreetNo)")
+        gotoPage()
+//        SignUpForthViewController
+    }
+    func gotoPage(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpForthViewController" ) as! SignUpForthViewController
+        self.navigationController?.pushViewController(vc,
+        animated: true)
     }
     /*
     // MARK: - Navigation
