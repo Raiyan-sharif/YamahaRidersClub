@@ -115,8 +115,14 @@ class SignUpSecondViewController: UIViewController,UIPickerViewDelegate, UIPicke
         VerificationResponseModel.email = emailTF.text ?? ""
         VerificationResponseModel.nid = nidTF.text ?? ""
         VerificationResponseModel.drivingLicense = drivingLCTF.text ?? ""
+        //SignupThirdViewController
+        gotoPage()
     }
-    
+    func gotoPage(){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignupThirdViewController" ) as! SignupThirdViewController
+        self.navigationController?.pushViewController(vc,
+        animated: true)
+    }
     /*
     // MARK: - Navigation
 

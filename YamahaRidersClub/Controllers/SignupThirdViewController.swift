@@ -8,14 +8,140 @@
 import UIKit
 
 class SignupThirdViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    var maritalStatus:[String] = ["Married", "Un-Married"]
+    var presentUpazilla:[String] = []
+    var permenentUpazilla:[String] = []
+    var presentUpazillaCode:[String] = []
+    var permenentUpazillaCode:[String] = []
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if(pickerView.tag == 1){
-            return VerificationResponseModel.occupationList.count
+            return 1
         }
+        else if pickerView.tag == 2{
+            return 1
+        }
+        else if(pickerView.tag == 3){
+            return 2
+        }
+        else if(pickerView.tag == 4){
+            return 2
+        }
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        if pickerView.tag == 1{
+            return VerificationResponseModel.occupationList.count
+        }
+        else if(pickerView.tag == 2){
+            return maritalStatus.count
+        }
+        else if(pickerView.tag == 3 && component == 0){
+            return VerificationResponseModel.districtList.count
+        }
+        else if(pickerView.tag == 4 && component == 0){
+            return VerificationResponseModel.districtList.count
+        }
+        else if(pickerView.tag == 3 && component == 1){
+            return presentUpazilla.count
+        }
+        else if(pickerView.tag == 4 && component == 1){
+            return permenentUpazilla.count
+        }
+        
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(row)
+        print(component)
+        if pickerView.tag == 1{
+            VerificationResponseModel.occupation = VerificationResponseModel.occupationList[row].occupationId
+        }
+        else if(pickerView.tag == 2){
+            VerificationResponseModel.maritalStatus = row == 1 ? "UM" : "M"
+            print(VerificationResponseModel.maritalStatus)
+        }
+        else if(pickerView.tag == 3 && component == 0){
+            VerificationResponseModel.districtCode = VerificationResponseModel.districtList[row].districtCode
+            let selectedDistrictCode = VerificationResponseModel.districtList[row].districtCode
+            presentUpazilla = []
+            presentUpazillaCode = []
+            
+            
+            for i in 0 ... VerificationResponseModel.upazillaList.count-1{
+                if VerificationResponseModel.upazillaList[i].districtCode == selectedDistrictCode{
+                    presentUpazilla.append(VerificationResponseModel.upazillaList[i].upazillaName)
+                    presentUpazillaCode.append(VerificationResponseModel.upazillaList[i].upazillaCode)
+                }
+            }
+            
+            pickerView.reloadComponent(1)
+        }
+        else if(pickerView.tag == 4 && component == 0){
+            VerificationResponseModel.permanentDistrictCode = VerificationResponseModel.districtList[row].districtCode
+            print("DID Select Value \(VerificationResponseModel.permanentDistrictCode )")
+            let selectedDistrictCode = VerificationResponseModel.districtList[row].districtCode
+            
+            permenentUpazilla = []
+            permenentUpazillaCode = []
+            
+            for i in 0 ... VerificationResponseModel.upazillaList.count-1{
+                if VerificationResponseModel.upazillaList[i].districtCode == selectedDistrictCode{
+                    print(VerificationResponseModel.upazillaList[i].upazillaName)
+                    permenentUpazilla.append(VerificationResponseModel.upazillaList[i].upazillaName)
+                    permenentUpazillaCode.append(VerificationResponseModel.upazillaList[i].upazillaCode)
+                }
+            }
+            
+            pickerView.reloadComponent(1)
+        }
+        else if(pickerView.tag == 3 && component == 1){
+            VerificationResponseModel.upazillaCode = presentUpazillaCode[row]
+        }
+        else if(pickerView.tag == 4 && component == 1){
+            VerificationResponseModel.permanentUpazillaCode = permenentUpazillaCode[row]
+            
+        }
+        
+//        if(component == 1){
+//            VerificationResponseModel.productCode = pickerDataCode[row]
+//        }
+//        else{
+//            VerificationResponseModel.brandCode = VerificationResponseModel.brandlistArray[row].brandCode
+//
+//        }
+//        print(VerificationResponseModel.brandCode)
+//        print(VerificationResponseModel.productCode)
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 1{
+            return VerificationResponseModel.occupationList[row].occupationName
+        }
+        else if(pickerView.tag == 2){
+            return maritalStatus[row]
+        }
+        else if(pickerView.tag == 3 && component == 0){
+            
+            
+            return VerificationResponseModel.districtList[row].districtName
+            
+        }
+        else if(pickerView.tag == 4 && component == 0){
+            print("row \(row)")
+            
+            
+            return VerificationResponseModel.districtList[row].districtName
+        }
+        else if(pickerView.tag == 3 && component == 1){
+            return presentUpazilla[row]
+        }
+        else if(pickerView.tag == 4 && component == 1){
+            return permenentUpazilla[row]
+        }
+        
+        return ""
     }
     
 
@@ -53,6 +179,19 @@ class SignupThirdViewController: UIViewController,UIPickerViewDelegate, UIPicker
      return false
      }
 
+    @IBAction func nextBtnPressed(_ sender: Any) {
+        
+        print("Occupation: \(VerificationResponseModel.occupation)")
+        print("Marital Status: \(VerificationResponseModel.maritalStatus)")
+        print("Present District Code: \(VerificationResponseModel.districtCode)")
+        print("Present Upzilla Code: \(VerificationResponseModel.upazillaCode)")
+        print("Permenent District Code: \(VerificationResponseModel.permanentDistrictCode)")
+        print("Permenent Upazilla Code: \(VerificationResponseModel.permanentUpazillaCode)")
+        VerificationResponseModel.permanentStreetNo = permenantAddressTF.text ?? ""
+        VerificationResponseModel.streetNo = presentAddressTF.text ?? ""
+        print("Present Address: \(VerificationResponseModel.streetNo)")
+        print("Permenent Address: \(VerificationResponseModel.permanentStreetNo)")
+    }
     /*
     // MARK: - Navigation
 
