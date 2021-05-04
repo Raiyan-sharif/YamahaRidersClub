@@ -34,6 +34,7 @@
 		1B1C175625FF3E31008FF687 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175525FF3E31008FF687 /* MenuListItem.swift */; };
 		1B1C175B25FF6838008FF687 /* DidSelectMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */; };
 		1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C176025FF7D61008FF687 /* SlideInTransition.swift */; };
+		1B54A1DF26411BF600097683 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54A1DE26411BF600097683 /* NewRideViewController.swift */; };
 		1BAA6C0825FA0F3C0050EDE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */; };
 		1BAA6C0A25FA0F3C0050EDE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */; };
 		1BAA6C0C25FA0F3C0050EDE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA6C0B25FA0F3C0050EDE0 /* ViewController.swift */; };
@@ -128,6 +129,7 @@
 		1B1C175525FF3E31008FF687 /* MenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		1B1C175A25FF6838008FF687 /* DidSelectMenuItemOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidSelectMenuItemOption.swift; sourceTree = "<group>"; };
 		1B1C176025FF7D61008FF687 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		1B54A1DE26411BF600097683 /* NewRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRideViewController.swift; sourceTree = "<group>"; };
 		1BAA6C0425FA0F3C0050EDE0 /* YamahaRidersClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YamahaRidersClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAA6C0725FA0F3C0050EDE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BAA6C0925FA0F3C0050EDE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				1BDFDF52263E964F00D5F975 /* SignUpSecondViewController.swift */,
 				1BB68300263EE19E00191088 /* SignupThirdViewController.swift */,
 				1BB68305263FA39000191088 /* SignUpForthViewController.swift */,
+				1B54A1DE26411BF600097683 /* NewRideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				1BEC5FD12603F4E200664EA6 /* WeatherData.swift in Sources */,
 				1B1C174125FF26EC008FF687 /* HomeViewController.swift in Sources */,
 				1BDFDF2E263BC5FE00D5F975 /* PhoneVerificationViewController.swift in Sources */,
+				1B54A1DF26411BF600097683 /* NewRideViewController.swift in Sources */,
 				1B0BFDD72607151200939FBA /* ArticleTableViewCell.swift in Sources */,
 				1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */,
 				1BEC5F902602D5E300664EA6 /* ArticleData.swift in Sources */,

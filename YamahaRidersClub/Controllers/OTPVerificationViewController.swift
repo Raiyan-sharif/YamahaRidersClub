@@ -228,6 +228,9 @@ class OTPVerificationViewController: UIViewController {
                         animated: true)
                         
                     }
+                    else{
+                        self.dismiss(animated: false, completion: nil)
+                    }
                     
                     
                     

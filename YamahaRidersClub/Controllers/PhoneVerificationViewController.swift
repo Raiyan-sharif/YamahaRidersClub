@@ -65,11 +65,19 @@ class PhoneVerificationViewController: UIViewController, UITextFieldDelegate{
                     print(swiftyJsonVar)
                     if(swiftyJsonVar["success"]==1){
                         self.userDefaults.setValue(mobileNo, forKey: "mobileno")
-                        self.dismiss(animated: false, completion: nil)
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPVerificationViewController" ) as! OTPVerificationViewController
-                        self.navigationController?.pushViewController(vc,
-                        animated: true)
+                        self.dismiss(animated: false, completion: {
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "OTPVerificationViewController" ) as! OTPVerificationViewController
+                            self.navigationController?.pushViewController(vc,
+                            animated: true)
+                        })
                         
+                        
+                    }
+                    else{
+                        self.dismiss(animated: false, completion:
+                        {
+                            self.navigationController?.popToRootViewController(animated: true)
+                        })
                     }
                     
                     
@@ -79,6 +87,7 @@ class PhoneVerificationViewController: UIViewController, UITextFieldDelegate{
                 }
                 
             }
+            
         }
     }
 

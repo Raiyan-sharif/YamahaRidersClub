@@ -124,6 +124,8 @@ class SignUpForthViewController: UIViewController,UIPickerViewDelegate, UIPicker
         ]
         
         
+
+        
         let dataclassModel = DataClass(email: VerificationResponseModel.email, chassisNo: VerificationResponseModel.chasisNo, permanentUpazillaCode: VerificationResponseModel.permanentUpazillaCode, crossRidingExperience: VerificationResponseModel.crossRidingExperience, sex: VerificationResponseModel.sEx, permanentDistrictCode: VerificationResponseModel.permanentDistrictCode, drivingLicense: VerificationResponseModel.drivingLicense, sing: VerificationResponseModel.sing, brandCode: VerificationResponseModel.brandCode, prevBikeDetails: VerificationResponseModel.prevBikeDetails, name: VerificationResponseModel.name, bnccAffiliation: VerificationResponseModel.bnccAffiliation, engineNo: VerificationResponseModel.engineNo, districtCode: VerificationResponseModel.districtCode, streetNo: VerificationResponseModel.streetNo, password: VerificationResponseModel.password, dateOfBirth: VerificationResponseModel.dateOfBirth, bloodGroup: VerificationResponseModel.bloodGroup, upazillaCode: VerificationResponseModel.upazillaCode, mobileNo: userDefaults.string(forKey: "mobileno") ?? "", facebookIDLink: VerificationResponseModel.facebookIdLink, productCode: VerificationResponseModel.productCode, nid: VerificationResponseModel.nid, ridingType: VerificationResponseModel.ridingType, yearRidingExperience: VerificationResponseModel.yearRidingExperience, occupation: VerificationResponseModel.occupation, maritalStatus: VerificationResponseModel.maritalStatus, area: VerificationResponseModel.area, permanentStreetNo: VerificationResponseModel.permanentStreetNo, fabDestCountry: VerificationResponseModel.fabDestCountry, fabDestAbroad: VerificationResponseModel.fabDestAbroad, instrument: VerificationResponseModel.instrument, crossRidingExperienceDetails: VerificationResponseModel.crossRidingExperienceDetails)
         
         let parameter = RegistrationDataModel(data: dataclassModel)
@@ -135,7 +137,22 @@ class SignUpForthViewController: UIViewController,UIPickerViewDelegate, UIPicker
 //        } catch (let e) {
 //            print(e)
 //        }
+        func jsonFunc(from object:Any) -> String? {
+            guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
+                return nil
+            }
+            return String(data: data, encoding: String.Encoding.utf8)
+        }
+        let alert = UIAlertController(title: nil, message: "Registering ....", preferredStyle: .alert)
+
+        alert.view.tintColor = UIColor.black
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
         
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
         
         AF.request("https://apps.acibd.com/apps/yrc/riderinfo/riderregistration",method: .post, parameters: ["data":json]).response { response in
             let result = response.result
@@ -146,8 +163,9 @@ class SignUpForthViewController: UIViewController,UIPickerViewDelegate, UIPicker
                             let swiftyJsonVar = JSON(finalData)
                             print(swiftyJsonVar)
                             print("Here \(value)")
-//                            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                            self.navigationController?.popToRootViewController(animated: true)
+
+                            self.dismiss(animated: false, completion:{ self.navigationController?.popToRootViewController(animated: true)
+                            })
 
                             
                         }
