@@ -261,6 +261,11 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         case .QRScanner:
             goToScannerPage()
             
+        case .NewRider:
+//            NewRideViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "NewRideViewController" ) as! NewRideViewController
+            self.navigationController?.pushViewController(vc,
+            animated: true)
         case .Logout:
             self.userDefaults.setValue(false, forKey: "isloggedIn")
             self.userDefaults.setValue("", forKey: "mobileno")
