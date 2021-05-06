@@ -120,6 +120,12 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     @objc
     func forgotPasswordTapped(sender:UITapGestureRecognizer) {
+        //ForgotPasswordaViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ForgotPasswordaViewController") as! ForgotPasswordaViewController
+//            let testVc = storyboard?.instantiateViewController(identifier: "WeatherViewController") as! WeatherViewController
+         
+         navigationController?.pushViewController(vc,
+         animated: false)
         print("Forgot Password")
     }
     

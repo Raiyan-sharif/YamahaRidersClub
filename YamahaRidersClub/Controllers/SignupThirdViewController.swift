@@ -104,46 +104,80 @@ class SignupThirdViewController: UIViewController,UIPickerViewDelegate, UIPicker
             
         }
         
-//        if(component == 1){
-//            VerificationResponseModel.productCode = pickerDataCode[row]
-//        }
-//        else{
-//            VerificationResponseModel.brandCode = VerificationResponseModel.brandlistArray[row].brandCode
-//
-//        }
-//        print(VerificationResponseModel.brandCode)
-//        print(VerificationResponseModel.productCode)
+        
         
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont (name: "Helvetica Neue", size: 10)
+        label.textAlignment = .center
+        
         if pickerView.tag == 1{
-            return VerificationResponseModel.occupationList[row].occupationName
+            label.text = VerificationResponseModel.occupationList[row].occupationName
+            return label
         }
         else if(pickerView.tag == 2){
-            return maritalStatus[row]
+            label.text = maritalStatus[row]
+            return label
         }
         else if(pickerView.tag == 3 && component == 0){
             
             
-            return VerificationResponseModel.districtList[row].districtName
+            label.text = VerificationResponseModel.districtList[row].districtName
+            return label
             
         }
         else if(pickerView.tag == 4 && component == 0){
             print("row \(row)")
             
             
-            return VerificationResponseModel.districtList[row].districtName
+            label.text = VerificationResponseModel.districtList[row].districtName
+            return label
         }
         else if(pickerView.tag == 3 && component == 1){
-            return presentUpazilla[row]
+            label.text = presentUpazilla[row]
+            return label
         }
         else if(pickerView.tag == 4 && component == 1){
-            return permenentUpazilla[row]
+            label.text = permenentUpazilla[row]
+            return label
         }
         
-        return ""
+        label.text = ""
+            
+        return label
     }
-    
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        if pickerView.tag == 1{
+//            return VerificationResponseModel.occupationList[row].occupationName
+//        }
+//        else if(pickerView.tag == 2){
+//            return maritalStatus[row]
+//        }
+//        else if(pickerView.tag == 3 && component == 0){
+//
+//
+//            return VerificationResponseModel.districtList[row].districtName
+//
+//        }
+//        else if(pickerView.tag == 4 && component == 0){
+//            print("row \(row)")
+//
+//
+//            return VerificationResponseModel.districtList[row].districtName
+//        }
+//        else if(pickerView.tag == 3 && component == 1){
+//            return presentUpazilla[row]
+//        }
+//        else if(pickerView.tag == 4 && component == 1){
+//            return permenentUpazilla[row]
+//        }
+//
+//        return ""
+//    }
+//
 
     @IBOutlet weak var occupationPicker: UIPickerView!
     @IBOutlet weak var maritalStatusPicker: UIPickerView!
@@ -165,9 +199,23 @@ class SignupThirdViewController: UIViewController,UIPickerViewDelegate, UIPicker
         permenetAddressPicker.dataSource = self
         presentAddressTF.delegate = self
         permenantAddressTF.delegate = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
      //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard

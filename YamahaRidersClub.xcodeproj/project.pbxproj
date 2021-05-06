@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B096FD12643F5DC003B07CD /* ForgotPasswordaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */; };
 		1B0BFDBF260540D600939FBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDBE260540D500939FBA /* Constants.swift */; };
 		1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDC326054A9E00939FBA /* UserInfo.swift */; };
 		1B0BFDC9260658CF00939FBA /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordaViewController.swift; sourceTree = "<group>"; };
 		1B0BFDBE260540D500939FBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B0BFDC326054A9E00939FBA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				1BB68300263EE19E00191088 /* SignupThirdViewController.swift */,
 				1BB68305263FA39000191088 /* SignUpForthViewController.swift */,
 				1B54A1DE26411BF600097683 /* NewRideViewController.swift */,
+				1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				1B0BFE91260EF2C900939FBA /* DealerModel.swift in Sources */,
 				1BF72824261C1B7B00A0ED4F /* GeneralUserBikeModelDetailsTableViewCell.swift in Sources */,
 				1BEC5F73260292D200664EA6 /* LoginManager.swift in Sources */,
+				1B096FD12643F5DC003B07CD /* ForgotPasswordaViewController.swift in Sources */,
 				1B0BFE82260EDB9800939FBA /* OfferModel.swift in Sources */,
 				1BDFDF33263D0DE200D5F975 /* OTPVerificationViewController.swift in Sources */,
 				1BB6830B263FD22100191088 /* RegistrationDataModel.swift in Sources */,
@@ -911,12 +915,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -936,12 +942,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

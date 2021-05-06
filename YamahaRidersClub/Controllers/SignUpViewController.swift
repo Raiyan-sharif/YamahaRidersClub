@@ -39,24 +39,21 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         print(VerificationResponseModel.productCode)
         
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-     //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
-     if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
-     nextField.becomeFirstResponder()
-     } else {
-     textField.resignFirstResponder()
-     }
-     return false
-     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = UILabel()
+        if let v = view as? UILabel { label = v }
+        label.font = UIFont (name: "Helvetica Neue", size: 10)
+        label.textAlignment = .center
         
         if(component == 1){
-//            VerificationResponseModel.selectedModel[1] = pickerData[row]
-//            print(VerificationResponseModel.selectedModel[0])
-            return pickerData[row]
+
+            label.text = pickerData[row]
+            return label
         }
         else if(component == 0){
             modelSelectedCode = VerificationResponseModel.brandlistArray[row].brandCode
+            label.text = VerificationResponseModel.brandlistArray[row].brandName
             pickerData = []
             pickerDataCode = []
             for i in 0 ... VerificationResponseModel.productlistArray.count-1{
@@ -68,11 +65,49 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 //            VerificationResponseModel.selectedModel[0] = VerificationResponseModel.brandlistArray[row].brandName
 //            print(VerificationResponseModel.selectedModel[0])
             pickerView.reloadComponent(1)
-            return VerificationResponseModel.brandlistArray[row].brandName
+            return label
         }
         
-        return VerificationResponseModel.brandlistArray[row].brandName
+        label.text = VerificationResponseModel.brandlistArray[row].brandName
+            
+            return label
     }
+    
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        
+//        if(component == 1){
+////            VerificationResponseModel.selectedModel[1] = pickerData[row]
+////            print(VerificationResponseModel.selectedModel[0])
+//            return pickerData[row]
+//        }
+//        else if(component == 0){
+//            modelSelectedCode = VerificationResponseModel.brandlistArray[row].brandCode
+//            pickerData = []
+//            pickerDataCode = []
+//            for i in 0 ... VerificationResponseModel.productlistArray.count-1{
+//                if VerificationResponseModel.productlistArray[i].brandCode == modelSelectedCode{
+//                    pickerData.append(VerificationResponseModel.productlistArray[i].productName)
+//                    pickerDataCode.append(VerificationResponseModel.productlistArray[i].productCode)
+//                }
+//            }
+////            VerificationResponseModel.selectedModel[0] = VerificationResponseModel.brandlistArray[row].brandName
+////            print(VerificationResponseModel.selectedModel[0])
+//            pickerView.reloadComponent(1)
+//            return VerificationResponseModel.brandlistArray[row].brandName
+//        }
+//        
+//        return VerificationResponseModel.brandlistArray[row].brandName
+//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
+     if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
+     nextField.becomeFirstResponder()
+     } else {
+     textField.resignFirstResponder()
+     }
+     return false
+     }
     
 
     @IBOutlet weak var modelSelectPicker: UIPickerView!
@@ -84,6 +119,7 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
         self.modelSelectPicker.delegate = self
         self.modelSelectPicker.dataSource = self
+        
         engineTF.delegate = self
         chesisTF.delegate = self
       
