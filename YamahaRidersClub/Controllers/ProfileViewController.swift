@@ -54,9 +54,36 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         outerBorderOfImage.layer.borderWidth = 2
         fillProfileData()
         
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.onFBlinkTap))
+        fbProfileLink.isUserInteractionEnabled = true
+        fbProfileLink.addGestureRecognizer(tap2)
+        
         
         
      
+    }
+    @objc func onFBlinkTap(){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+
+        print("width \(view.layer.borderWidth)")
+        alert.view.tintColor = UIColor.black
+//        let fbNewLinkTextField: UITextField = UITextField(frame: CGRect(x: 10, y: 5, width: 200, height: 50)) as UITextField
+        
+        //pending.view.bounds
+        let fbNewLinkTextField: UITextField = UITextField(frame: alert.view.bounds) as UITextField
+        fbNewLinkTextField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        fbNewLinkTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        fbNewLinkTextField.isUserInteractionEnabled = false
+//        loadingIndicator.hidesWhenStopped = true
+        
+//        loadingIndicator.startAnimating();
+
+        fbNewLinkTextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        fbNewLinkTextField.textAlignment = .center
+        alert.view.addSubview(fbNewLinkTextField)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     func fillProfileData(){
