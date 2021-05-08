@@ -63,27 +63,93 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
      
     }
     @objc func onFBlinkTap(){
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Add New Fb Link", message: "", preferredStyle: .alert)
 
-        print("width \(view.layer.borderWidth)")
-        alert.view.tintColor = UIColor.black
-//        let fbNewLinkTextField: UITextField = UITextField(frame: CGRect(x: 10, y: 5, width: 200, height: 50)) as UITextField
         
-        //pending.view.bounds
-        let fbNewLinkTextField: UITextField = UITextField(frame: alert.view.bounds) as UITextField
-        fbNewLinkTextField.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        fbNewLinkTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        fbNewLinkTextField.isUserInteractionEnabled = false
-//        loadingIndicator.hidesWhenStopped = true
+        alertVC.view.tintColor = UIColor.black
+        alertVC.addTextField { (fbNewLinkTextField) in
+            fbNewLinkTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            fbNewLinkTextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            fbNewLinkTextField.text = self.fbProfileLink.text
+            print(fbNewLinkTextField.text)
+        }
+        let submitAction = UIAlertAction(title: "Submit", style: .default, handler: {
+            (alert) -> Void in
+            
+            let fblinkTF = alertVC.textFields![0] as UITextField
+            self.setFBLinkToServerViaNSSession(newLink: fblinkTF.text ?? "")
+            
+            print("FB Link -- \(fblinkTF.text!)")
+        })
+        alertVC.addAction(submitAction)
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    func setFBLinkToServerViaNSSession(newLink:String){
+        let mobileNo = self.userDefaults.string(forKey: "mobileno") ?? ""
         
-//        loadingIndicator.startAnimating();
+        let parameters = ["FacebookIdLink": newLink,
+                          "mobileno":mobileNo] as [String : Any]
+        var fbLinkObj = FBLinkUploadModel(mobileNo: mobileNo, fbLink: newLink)
+        let encoder = JSONEncoder()
+        let fbLinkObjJSON = try! encoder.encode(fbLinkObj)
+        print("HEree")
+        print(fbLinkObjJSON)
 
-        fbNewLinkTextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        fbNewLinkTextField.textAlignment = .center
-        alert.view.addSubview(fbNewLinkTextField)
+        AF.request("http://apps.acibd.com/apps/yrc/rider-fb-link-add",method: .post,parameters: fbLinkObj, encoder: URLEncodedFormParameterEncoder(destination: .httpBody), headers: [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ] ).response { response in
+//            debugPrint(response.debugDescription)
+            if let res = response.value{
+                if let finalData = res{
+                    let swiftyJsonVar = JSON(finalData)
+                    print(swiftyJsonVar)
+                    if(swiftyJsonVar["msgtype"]=="success"){
+                       
+                        self.fbProfileLink.text = newLink
+                        UserInfo.facebookIDLink = newLink
+                    }
+                   
+                }
+                
+            }
+            
+        }
+            
+    }
+    
+    func setFBLinkToServer(newLink:String){
+        //https://www.facebook.com/yrc/rider-fb-link-add
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        let mobileNo = self.userDefaults.string(forKey: "mobileno") ?? ""
+        print(mobileNo)
+        print(newLink)
+        let url = URL(string: newLink)!
+        
+        print("http://apps.acibd.com/apps/yrc/rider-fb-link-add?mobileno=\(mobileNo)&FacebookIdLink=\(url)")
+        AF.request("http://apps.acibd.com/apps/yrc/rider-fb-link-add",method: .post, parameters: [
+            "FacebookIdLink": "https%3A%2F%2Fwww.facebook.com%2Fpritom92",
+            "mobileno":mobileNo
+        ],encoding: URLEncoding(destination: .queryString), headers: [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ] ).response { response in
+//            debugPrint(response.debugDescription)
+            if let res = response.value{
+                if let finalData = res{
+                    let swiftyJsonVar = JSON(finalData)
+                    print(swiftyJsonVar)
+                    if(swiftyJsonVar["msgtype"]=="success"){
+                       
+                        self.fbProfileLink.text = newLink
+                        UserInfo.facebookIDLink = newLink
+                    }
+                   
+                }
+                
+            }
+            
+        }
+        
     }
     
     func fillProfileData(){

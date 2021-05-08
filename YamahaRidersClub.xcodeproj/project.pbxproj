@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B096FD12643F5DC003B07CD /* ForgotPasswordaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */; };
+		1B096FD62646CC42003B07CD /* FBLinkUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */; };
 		1B0BFDBF260540D600939FBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDBE260540D500939FBA /* Constants.swift */; };
 		1B0BFDC426054A9E00939FBA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDC326054A9E00939FBA /* UserInfo.swift */; };
 		1B0BFDC9260658CF00939FBA /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordaViewController.swift; sourceTree = "<group>"; };
+		1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLinkUploadModel.swift; sourceTree = "<group>"; };
 		1B0BFDBE260540D500939FBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B0BFDC326054A9E00939FBA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1B0BFDC8260658CF00939FBA /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				1BDFDF28263BA7CB00D5F975 /* GeneralUserBikeTableViewCell.swift */,
 				1BDFDF4D263E599200D5F975 /* VerificationResponseModel.swift */,
 				1BB6830A263FD22000191088 /* RegistrationDataModel.swift */,
+				1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				1B0BFEAA2610002300939FBA /* PartsViewController.swift in Sources */,
 				1BEC5FBF2603C5AA00664EA6 /* ProfileViewController.swift in Sources */,
 				1BAA6C1225FA0F3C0050EDE0 /* YamahaRidersClub.xcdatamodeld in Sources */,
+				1B096FD62646CC42003B07CD /* FBLinkUploadModel.swift in Sources */,
 				1BF72841261CA0B200A0ED4F /* LubePartsViewController.swift in Sources */,
 				1BDFDF53263E964F00D5F975 /* SignUpSecondViewController.swift in Sources */,
 				1B0BFEBC26103B7D00939FBA /* ProductsModel.swift in Sources */,
