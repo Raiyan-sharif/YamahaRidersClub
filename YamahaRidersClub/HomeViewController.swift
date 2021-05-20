@@ -96,7 +96,8 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
 //        tableView.layer.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         title = "YRC-BD"
-        ItemMenuIcon.image = UIImage(systemName: "rectangle.split.3x3")
+//        ItemMenuIcon.image = UIImage(systemName: "rectangle.split.3x3")
+        ItemMenuIcon.image = UIImage(named: "menu_ic")
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1788666844, green: 0.06861508638, blue: 0.6007255912, alpha: 1)
         
@@ -190,6 +191,11 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
 //         navigationController?.pushViewController(vc,
 //         animated: true)
 //    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.optionToSelectedForEvent = 0
+        loadAllEvents()
+    }
     
     
     @IBAction func didTapHomeMenu(_ sender: UIBarButtonItem) {

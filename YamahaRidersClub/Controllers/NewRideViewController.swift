@@ -6,24 +6,140 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
+import AVFoundation
+//CLLocationManagerDelegate
+class NewRideViewController: UIViewController{
+    var steps: [MKRoute.Step] = []
+    var stepCounter = 0
+    var route:MKRoute?
+    var showMapRoute = false
+    var showNavigationStarted = false
+    var locationDistance:Double = 500
+    var speedSynthesizer = AVSpeechSynthesizer()
+    var startCenter:CLLocationCoordinate2D!
+    var currentCenter:CLLocationCoordinate2D!
+    let startAnnotaion = MKPointAnnotation()
 
-class NewRideViewController: UIViewController {
-
+    @IBOutlet weak var startStopBtn: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if #available(iOS 13.0, *) {
+             overrideUserInterfaceStyle = .light
+         }
+        if (CLLocationManager.locationServicesEnabled())
+                {
+                    locationManager = CLLocationManager()
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    locationManager.requestWhenInUseAuthorization()
+                    locationManager.startUpdatingLocation()
+            locationManager.allowsBackgroundLocationUpdates = true
+            locationManager.showsBackgroundLocationIndicator = true
+            
+            
+        }
+        mapView.delegate = self
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func newRideTapped(_ sender: Any) {
+        var lastLocation = locationManager.location
+        startAnnotaion.title = "Start Location "
+        print(showMapRoute)
+        if(!showMapRoute){
+            startAnnotaion.coordinate = startCenter
+            self.mapView.addAnnotation(startAnnotaion)
+            locationManager.stopUpdatingLocation()
+            showMapRoute = true
+            startStopBtn.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            startStopBtn.setTitle("Stop", for: .normal)
+            
+//            let geoCoder = CLGeocoder()
+//            geoCoder.geocodeAddressString("Mirpur 13") { (placemarks, error) in
+//                if let error = error{
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//            }
+            let sourcePlaceMark = MKPlacemark(coordinate: startCenter)
+            let destinationPlaceMark = MKPlacemark(coordinate: currentCenter)
+            let sourceItem = MKMapItem(placemark: sourcePlaceMark)
+            let destinationItem = MKMapItem(placemark: destinationPlaceMark)
+            let requestRoute = MKDirections.Request()
+            requestRoute.source = sourceItem
+            requestRoute.destination = destinationItem
+            requestRoute.transportType = .automobile
+            let directions = MKDirections(request: requestRoute)
+            directions.calculate { (response, error) in
+                if let error = error{
+                    print(error.localizedDescription)
+                    return
+                }
+                guard let response = response, let routes = response.routes.first else {return}
+                self.route = routes
+                
+                self.mapView.addOverlay(routes.polyline)
+                self.mapView.setVisibleMapRect(routes.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0), animated: true)
+            
+            }
+            
+            
+            
+        }
+        else{
+            showMapRoute = false
+            startStopBtn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            startStopBtn.setTitle("Start", for: .normal)
+            self.mapView.removeAnnotation(startAnnotaion)
+        }
     }
-    */
+    
+    
+    
+    
+}
 
+extension NewRideViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !showMapRoute {
+            if let location = locations.last{
+                let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                print(location.speed)
+                descriptionLabel.text = "Speed = \(location.speed)\nCordinate = \(location.coordinate)"
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                startCenter = center
+                currentCenter = center
+                self.mapView.setRegion(region, animated: true)
+            
+            }
+        }
+        else{
+            //currentCenter
+            if let location = locations.last{
+                let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                print(location.speed)
+                descriptionLabel.text = "Speed = \(location.speed)\nCordinate = \(location.coordinate)"
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                currentCenter = center
+                self.mapView.setRegion(region, animated: true)
+            
+            }
+        }
+    }
+}
+
+extension NewRideViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = .systemBlue
+        return renderer
+    }
 }

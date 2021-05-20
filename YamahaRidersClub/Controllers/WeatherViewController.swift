@@ -19,21 +19,32 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Weather"
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+//        title = "Weather"
+//        locationManager.delegate = self
+////        locationManager.requestWhenInUseAuthorization()
+//        weatherManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         
-        locationManager.requestLocation()
-        
-        
-//        searchTextField.delegate = self
-        weatherManager.delegate = self
+//
+//
+//
+//
+////        searchTextField.delegate = self
+//
+//        locationManager.requestLocation()
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        locationManager.requestLocation()
+        title = "Weather"
+        weatherManager.delegate = self
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+       
+        locationManager.requestLocation()
     }
     
     func didUpdateWeather(_ weatherManger: WeatherManager, weather: WeatherModel){
@@ -49,9 +60,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
     func didFailWithError(error: Error) {
         print(error)
     }
-    @IBAction func getCurrentLocationData(_ sender: UIButton) {
-        locationManager.requestLocation()
-    }
+
     
 }
 

@@ -21,12 +21,12 @@ struct WeatherManager{
         let urlString =  "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
         performReqest(urlString: urlString)
     }
-    func fetchWeather(cityName: String){
-        let urlString = "\(weatherURL)&q=\(cityName)"
-        //        performReqest(urlString: "https://apps.acibd.com/apps/yrc/riderinfo/loginservice?mobileno=01755939896&password=1234")
-        performReqest(urlString: urlString)
-        
-    }
+//    func fetchWeather(cityName: String){
+//        let urlString = "\(weatherURL)&q=\(cityName)"
+//        //        performReqest(urlString: "https://apps.acibd.com/apps/yrc/riderinfo/loginservice?mobileno=01755939896&password=1234")
+//        performReqest(urlString: urlString)
+//        
+//    }
     func performReqest(urlString: String){
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
