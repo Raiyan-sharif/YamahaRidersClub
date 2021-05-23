@@ -20,7 +20,6 @@ struct RideCoordinate: Codable {
 // MARK: - RideDetail
 struct RideDetail: Codable {
     let mobile: String
-    let rideid: Int
     let startaddress, endaddress: String
     let distance, avgspeed, maxspeed: Double
     let startTime, endTime: String

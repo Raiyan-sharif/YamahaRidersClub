@@ -9,6 +9,8 @@ import UIKit
 import CoreLocation
 import MapKit
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 //import GooglePlaces
 //CLLocationManagerDelegate
 class NewRideViewController: UIViewController{
@@ -24,6 +26,8 @@ class NewRideViewController: UIViewController{
     let startAnnotaion = MKPointAnnotation()
     var listOfData:NewRideModel?
     var startTime: String = ""
+    var startAddress:String = ""
+    var userDefaults = UserDefaults.standard
 
     @IBOutlet weak var startStopBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
@@ -72,6 +76,7 @@ class NewRideViewController: UIViewController{
 //                    return
 //                }
 //            }
+            
             let sourcePlaceMark = MKPlacemark(coordinate: startCenter)
             let destinationPlaceMark = MKPlacemark(coordinate: currentCenter)
             let sourceItem = MKMapItem(placemark: sourcePlaceMark)
@@ -99,10 +104,85 @@ class NewRideViewController: UIViewController{
         }
         else{
             showMapRoute = false
+            let date = Date()
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let endtime = format.string(from: date)
+            
+            
+            
+            let geoCoder = CLGeocoder()
+            var endAddress = startAddress
+            geoCoder.reverseGeocodeLocation(lastLocation!, completionHandler:
+            {
+                placemarks, error -> Void in
+
+                // Place details
+                guard let placeMark = placemarks?.last else { return }
+
+                // Location name
+                if let locationName = placeMark.location {
+//                        print("Name \(locationName)")
+                    endAddress = "\(locationName)"
+                }
+                // Street address
+                if let street = placeMark.thoroughfare {
+//                        print("Street \(street)")
+                    endAddress += "\(street)"
+                }
+                // City
+                if let city = placeMark.subAdministrativeArea {
+//                        print("City \(city)")
+                    endAddress += "\(city)"
+                }
+                // Zip code
+                if let zip = placeMark.isoCountryCode {
+//                        print("Zip \(zip)")
+                    endAddress += "\(zip)"
+                }
+                // Country
+                if let country = placeMark.country {
+//                        print("Country \(country)")
+                    endAddress += "\(country)"
+                    
+                }
+            })
+            var mobileNo = ""
+            if userDefaults.string(forKey: "mobileno") != nil{
+                mobileNo = userDefaults.string(forKey: "mobileno")!
+            }
+            
+            listOfData?.rideDetails.append(RideDetail(mobile: mobileNo, startaddress: startAddress, endaddress: endAddress, distance: 0.1, avgspeed: 0.1, maxspeed: 1.1, startTime: startTime, endTime: endtime, endbyuser: 1))
+            print(mobileNo)
+            print(startAddress)
+            print(endAddress)
+            print(startTime)
+            print(endtime)
+            
             startStopBtn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             startStopBtn.setTitle("Start", for: .normal)
             locationManager.stopUpdatingLocation()
             self.mapView.removeAnnotation(startAnnotaion)
+            AF.request("https://apps.acibd.com/apps/yrc/syncdata/bikeridesync",method: .post,parameters: listOfData, encoder: URLEncodedFormParameterEncoder(destination: .httpBody), headers: [
+                "Content-Type": "application/json"
+            ]).response { response in
+    //            debugPrint(response.debugDescription)
+                if let res = response.value{
+                    if let finalData = res{
+                        let swiftyJsonVar = JSON(finalData)
+                        print(swiftyJsonVar.error)
+                        print("Here")
+//                        if(swiftyJsonVar["msgtype"]=="success"){
+//                           
+//                            self.fbProfileLink.text = newLink
+//                            UserInfo.facebookIDLink = newLink
+//                        }
+                       
+                    }
+                    
+                }
+                
+            }
         }
     }
     
@@ -112,40 +192,7 @@ class NewRideViewController: UIViewController{
 }
 
 extension NewRideViewController: CLLocationManagerDelegate{
-//    func currentAddres(_ coordinate:CLLocationCoordinate2D) -> Void
-//        {
-//            geoCoder.reverseGeocodeCoordinate(coordinate) { (response, error) in
-//
-//                if error == nil
-//                {
-//                    if response != nil
-//                    {
-//                        let address:GMSAddress! = response!.firstResult()
-//
-//                        if address != nil
-//                        {
-//                            let addressArray:NSArray! = address.lines! as NSArray
-//
-//                            if addressArray.count > 1
-//                            {
-//                                var convertAddress:AnyObject! = addressArray.object(at: 0) as AnyObject!
-//                                let space = ","
-//                                let convertAddress1:AnyObject! = addressArray.object(at: 1) as AnyObject!
-//                                let country:AnyObject! = address.country as AnyObject!
-//
-//                                convertAddress = (((convertAddress.appending(space) + (convertAddress1 as! String)) + space) + (country as! String)) as AnyObject
-//
-//                                self.currentlocationlbl.text = "\(convertAddress!)".appending(".")
-//                            }
-//                            else
-//                            {
-//                                self.currentlocationlbl.text = "Fetching current location failure!!!!"
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !showMapRoute {
             if let location = locations.last{
@@ -161,18 +208,50 @@ extension NewRideViewController: CLLocationManagerDelegate{
                 let format = DateFormatter()
                 format.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 startTime = format.string(from: date)
-                
-                let address = CLGeocoder.init()
-                    address.reverseGeocodeLocation(location) { (places, error) in
-                        if error == nil{
-                            if let place = places{
-                                print(place)
-                            }
-                        }
+                print(startTime)
+                let geoCoder = CLGeocoder()
+                startAddress = ""
+                geoCoder.reverseGeocodeLocation(location, completionHandler:
+                {
+                    placemarks, error -> Void in
+
+                    // Place details
+                    guard let placeMark = placemarks?.first else { return }
+
+                    // Location name
+                    if let locationName = placeMark.location {
+//                        print("Name \(locationName)")
+                        self.startAddress = "\(locationName)"
                     }
+                    // Street address
+                    if let street = placeMark.thoroughfare {
+//                        print("Street \(street)")
+                        self.startAddress += "\(street)"
+                    }
+                    // City
+                    if let city = placeMark.subAdministrativeArea {
+//                        print("City \(city)")
+                        self.startAddress += "\(city)"
+                    }
+                    // Zip code
+                    if let zip = placeMark.isoCountryCode {
+//                        print("Zip \(zip)")
+                        self.startAddress += "\(zip)"
+                    }
+                    // Country
+                    if let country = placeMark.country {
+//                        print("Country \(country)")
+                        self.startAddress += "\(country)"
+                        
+                    }
+                })
+                print(self.startAddress)
+                
+                
                 
                 listOfData?.rideCoordinates = []
                 listOfData?.rideDetails = []
+                locationManager.stopUpdatingLocation()
             
             }
         }
@@ -183,7 +262,7 @@ extension NewRideViewController: CLLocationManagerDelegate{
                 print(location.speed)
                 
                 
-                
+                print("Is IT\(self.startAddress)")
                 
                 
                 let date2 = NSDate() // current date
