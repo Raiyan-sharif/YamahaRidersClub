@@ -21,6 +21,8 @@ class NewRideViewController: UIViewController{
     var startCenter:CLLocationCoordinate2D!
     var currentCenter:CLLocationCoordinate2D!
     let startAnnotaion = MKPointAnnotation()
+    var listOfData:NewRideModel?
+    var startTime: String = ""
 
     @IBOutlet weak var startStopBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
@@ -55,9 +57,9 @@ class NewRideViewController: UIViewController{
         startAnnotaion.title = "Start Location "
         print(showMapRoute)
         if(!showMapRoute){
+            locationManager.startUpdatingLocation()
             startAnnotaion.coordinate = startCenter
             self.mapView.addAnnotation(startAnnotaion)
-            locationManager.stopUpdatingLocation()
             showMapRoute = true
             startStopBtn.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             startStopBtn.setTitle("Stop", for: .normal)
@@ -98,6 +100,7 @@ class NewRideViewController: UIViewController{
             showMapRoute = false
             startStopBtn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             startStopBtn.setTitle("Start", for: .normal)
+            locationManager.stopUpdatingLocation()
             self.mapView.removeAnnotation(startAnnotaion)
         }
     }
@@ -112,12 +115,29 @@ extension NewRideViewController: CLLocationManagerDelegate{
         if !showMapRoute {
             if let location = locations.last{
                 let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                print(location.speed)
-                descriptionLabel.text = "Speed = \(location.speed)\nCordinate = \(location.coordinate)"
+                
+                print("\(location.coordinate)")
                 let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                 startCenter = center
                 currentCenter = center
                 self.mapView.setRegion(region, animated: true)
+                
+                let date = Date()
+                let format = DateFormatter()
+                format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                startTime = format.string(from: date)
+                
+                let address = CLGeocoder.init()
+                    address.reverseGeocodeLocation(location) { (places, error) in
+                        if error == nil{
+                            if let place = places{
+                                print(place)
+                            }
+                        }
+                    }
+                
+                listOfData?.rideCoordinates = []
+                listOfData?.rideDetails = []
             
             }
         }
@@ -126,7 +146,17 @@ extension NewRideViewController: CLLocationManagerDelegate{
             if let location = locations.last{
                 let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 print(location.speed)
-                descriptionLabel.text = "Speed = \(location.speed)\nCordinate = \(location.coordinate)"
+                
+                
+                
+                
+                
+                let date2 = NSDate() // current date
+                let unixtime = date2.timeIntervalSince1970
+                
+                print("Cordinate = \(location.coordinate), timestamp = \(unixtime)")
+                listOfData?.rideCoordinates.append(RideCoordinate(latitude: "\(location.coordinate.latitude)", longitude: "\(location.coordinate.longitude)", time:"\(unixtime)"))
+                
                 let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
                 currentCenter = center
                 self.mapView.setRegion(region, animated: true)

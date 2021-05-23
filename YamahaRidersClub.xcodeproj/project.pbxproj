@@ -50,6 +50,7 @@
 		1BB68301263EE19E00191088 /* SignupThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB68300263EE19E00191088 /* SignupThirdViewController.swift */; };
 		1BB68306263FA39100191088 /* SignUpForthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB68305263FA39000191088 /* SignUpForthViewController.swift */; };
 		1BB6830B263FD22100191088 /* RegistrationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6830A263FD22000191088 /* RegistrationDataModel.swift */; };
+		1BB7453A2659C8860096D08A /* NewRideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB745392659C8860096D08A /* NewRideModel.swift */; };
 		1BDFDF17263A4ABD00D5F975 /* ProductListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */; };
 		1BDFDF1F263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */; };
 		1BDFDF24263B9E8300D5F975 /* HalmetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */; };
@@ -153,6 +154,7 @@
 		1BB68300263EE19E00191088 /* SignupThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupThirdViewController.swift; sourceTree = "<group>"; };
 		1BB68305263FA39000191088 /* SignUpForthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForthViewController.swift; sourceTree = "<group>"; };
 		1BB6830A263FD22000191088 /* RegistrationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataModel.swift; sourceTree = "<group>"; };
+		1BB745392659C8860096D08A /* NewRideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRideModel.swift; sourceTree = "<group>"; };
 		1BDFDF16263A4ABD00D5F975 /* ProductListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDetailViewController.swift; sourceTree = "<group>"; };
 		1BDFDF1E263A5F8400D5F975 /* ProductImageDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1BDFDF23263B9E8100D5F975 /* HalmetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalmetTableViewCell.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				1BDFDF4D263E599200D5F975 /* VerificationResponseModel.swift */,
 				1BB6830A263FD22000191088 /* RegistrationDataModel.swift */,
 				1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */,
+				1BB745392659C8860096D08A /* NewRideModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				1BB68306263FA39100191088 /* SignUpForthViewController.swift in Sources */,
 				1B1C176125FF7D61008FF687 /* SlideInTransition.swift in Sources */,
 				1BEC5FD62603F50400664EA6 /* WeatherModel.swift in Sources */,
+				1BB7453A2659C8860096D08A /* NewRideModel.swift in Sources */,
 				1BDFDF38263D19A800D5F975 /* SignUpViewController.swift in Sources */,
 				1B0BFDDC260726EA00939FBA /* EventModel.swift in Sources */,
 				1B1C175025FF3B4E008FF687 /* MenuItemTableViewCell.swift in Sources */,
