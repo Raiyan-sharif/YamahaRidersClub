@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import AVFoundation
+//import GooglePlaces
 //CLLocationManagerDelegate
 class NewRideViewController: UIViewController{
     var steps: [MKRoute.Step] = []
@@ -111,6 +112,40 @@ class NewRideViewController: UIViewController{
 }
 
 extension NewRideViewController: CLLocationManagerDelegate{
+//    func currentAddres(_ coordinate:CLLocationCoordinate2D) -> Void
+//        {
+//            geoCoder.reverseGeocodeCoordinate(coordinate) { (response, error) in
+//
+//                if error == nil
+//                {
+//                    if response != nil
+//                    {
+//                        let address:GMSAddress! = response!.firstResult()
+//
+//                        if address != nil
+//                        {
+//                            let addressArray:NSArray! = address.lines! as NSArray
+//
+//                            if addressArray.count > 1
+//                            {
+//                                var convertAddress:AnyObject! = addressArray.object(at: 0) as AnyObject!
+//                                let space = ","
+//                                let convertAddress1:AnyObject! = addressArray.object(at: 1) as AnyObject!
+//                                let country:AnyObject! = address.country as AnyObject!
+//
+//                                convertAddress = (((convertAddress.appending(space) + (convertAddress1 as! String)) + space) + (country as! String)) as AnyObject
+//
+//                                self.currentlocationlbl.text = "\(convertAddress!)".appending(".")
+//                            }
+//                            else
+//                            {
+//                                self.currentlocationlbl.text = "Fetching current location failure!!!!"
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !showMapRoute {
             if let location = locations.last{
