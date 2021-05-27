@@ -156,24 +156,24 @@ class SignUpForthViewController: UIViewController,UIPickerViewDelegate, UIPicker
         
         AF.request("https://apps.acibd.com/apps/yrc/riderinfo/riderregistration",method: .post, parameters: ["data":json]).response { response in
             let result = response.result
-            switch result{
-                case .success(let value):
-                    if let res = response.value{
-                        if let finalData = res{
-                            let swiftyJsonVar = JSON(finalData)
-                            print(swiftyJsonVar)
-                            print("Here \(value)")
+                        switch result{
+                            case .success(let value):
+                                if let res = response.value{
+                                    if let finalData = res{
+                                        let swiftyJsonVar = JSON(finalData)
+                                        print(swiftyJsonVar)
+                                        print("Here \(value)")
 
-                            self.dismiss(animated: false, completion:{ self.navigationController?.popToRootViewController(animated: true)
-                            })
+                                        self.dismiss(animated: false, completion:{ self.navigationController?.popToRootViewController(animated: true)
+                                        })
 
-                            
+                                        
+                                    }
+                                    
+                                }
+                        case .failure(let errno):
+                            print(errno)
                         }
-                        
-                    }
-            case .failure(let errno):
-                print(errno)
-            }
 //            debugPrint(response.debugDescription)
             
         }

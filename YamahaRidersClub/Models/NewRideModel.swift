@@ -7,6 +7,9 @@
 import Foundation
 
 // MARK: - Welcome
+struct MainNewRideModel: Codable{
+    let data:NewRideModel
+}
 struct NewRideModel: Codable {
     var rideDetails: [RideDetail]
     var rideCoordinates: [RideCoordinate]
