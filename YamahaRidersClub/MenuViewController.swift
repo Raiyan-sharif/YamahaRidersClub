@@ -10,6 +10,8 @@ import UIKit
 class MenuViewController: UITableViewController {
     var didTapMenuType: ((DidSelectMenuItemOption) -> Void)?
     
+
+    
     var menuItemList: [MenuListItem] = [MenuListItem(image: "person.fill", itemName: "My Profile"),
                                         MenuListItem(image: "radiowaves.right", itemName: "News Feed"),
                                         MenuListItem(image: "cart", itemName: "Products"),
@@ -104,6 +106,9 @@ class MenuViewController: UITableViewController {
         
         if (indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "menuTitleCell") as! MenuTitleTableViewCell
+            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            
+            cell.appVersionLabel.text = "App Version: \(appVersion ?? "1.0")"
             
             return cell
         }

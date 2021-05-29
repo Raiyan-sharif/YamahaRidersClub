@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         title = "Login"
         userManager.delegate = self
+        //01755939896
+        //1234
         
         mobileNoTF.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         mobileNoTF.layer.borderWidth = 2.0

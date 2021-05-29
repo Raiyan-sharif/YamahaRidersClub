@@ -121,7 +121,9 @@ class SignUpViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.modelSelectPicker.dataSource = self
         
         engineTF.delegate = self
+        //G3C8E0365029
         chesisTF.delegate = self
+        //ME1RG0749G0045075
       
         pickerData = []
         pickerDataCode = []

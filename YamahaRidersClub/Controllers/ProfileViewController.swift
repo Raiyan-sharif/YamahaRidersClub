@@ -31,11 +31,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var averageSpeedLabel: UILabel!
     @IBOutlet weak var fbProfileLink: UILabel!
     @IBOutlet weak var dataHolderStack: UIStackView!
+    @IBOutlet weak var changefbProfileLink: UILabel!
     
     @IBOutlet weak var outerBorderOfImage: UIView!
+    
     var userDefaults = UserDefaults.standard
     var imagePickerController = UIImagePickerController()
     var imagePickerControllerCoverPhoto = UIImagePickerController()
+    var isSourceCamera:Bool = false
     //MARK:- VIEWDidLOad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +58,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         fillProfileData()
         
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.onFBlinkTap))
-        fbProfileLink.isUserInteractionEnabled = true
-        fbProfileLink.addGestureRecognizer(tap2)
+        changefbProfileLink.isUserInteractionEnabled = true
+        changefbProfileLink.addGestureRecognizer(tap2)
         
         
         
@@ -64,24 +67,33 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     @objc func onFBlinkTap(){
         let alertVC = UIAlertController(title: "Add New Fb Link", message: "", preferredStyle: .alert)
-
         
-        alertVC.view.tintColor = UIColor.black
+
         alertVC.addTextField { (fbNewLinkTextField) in
             fbNewLinkTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             fbNewLinkTextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             fbNewLinkTextField.text = self.fbProfileLink.text
             print(fbNewLinkTextField.text)
         }
-        let submitAction = UIAlertAction(title: "Submit", style: .default, handler: {
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
             (alert) -> Void in
             
+            
+            self.dismiss(animated: true, completion: nil)
+            print("cancel")
+        })
+        cancelAction.setValue(UIColor.white, forKey: "titleTextColor")
+        let submitAction = UIAlertAction(title: "Submit", style: .default, handler: {
+            (alert) -> Void in
             let fblinkTF = alertVC.textFields![0] as UITextField
             self.setFBLinkToServerViaNSSession(newLink: fblinkTF.text ?? "")
             
             print("FB Link -- \(fblinkTF.text!)")
         })
+        submitAction.setValue(UIColor.white, forKey: "titleTextColor")
         alertVC.addAction(submitAction)
+        alertVC.addAction(cancelAction)
         present(alertVC, animated: true, completion: nil)
     }
     
@@ -229,6 +241,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func tappedOnCoverPhotoButton(_ sender: UIButton) {
+        isSourceCamera = false
         self.imagePickerControllerCoverPhoto.sourceType = .photoLibrary
 //        self.imagePickerControllerCoverPhoto.allowsEditing = true
         
@@ -239,16 +252,56 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @IBAction func tappedOnProfilePhotoButton(_ sender: UIButton) {
-        print("Camera")
+        print("Profile ")
         //http://apps.acibd.com/apps/yrc/syncdata/riderprofile?MobileNo=01709222843
+        
+        let alertVC = UIAlertController(title: "Choose Source of Image", message: "", preferredStyle: .alert)
+
+        
+//        alertVC.view.tintColor = UIColor.black
+//        alertVC.view.backgroundColor = UIColor.white
+        
+//        alertVC.addTextField { (fbNewLinkTextField) in
+//            fbNewLinkTextField.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+//            fbNewLinkTextField.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//            fbNewLinkTextField.text = self.fbProfileLink.text
+//            print(fbNewLinkTextField.text)
+//        }
+        let galleryAction = UIAlertAction(title: "Gallery", style: .default, handler: {
+            (alert) -> Void in
+            self.getProfileImageFromGallary()
+            print("Gallary")
+        })
+        galleryAction.setValue(UIColor.white, forKey: "titleTextColor")
+//        alertVC.addAction(galleryAction)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: {
+            (alert) -> Void in
+            self.getProfileImageFromCamera()
+            print("Camera")
+        })
+        cameraAction.setValue(UIColor.white, forKey: "titleTextColor")
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
+            (alert) -> Void in
+            self.dismiss(animated: true, completion: nil)
+            print("cancel")
+        })
+        cancelAction.setValue(UIColor.white, forKey: "titleTextColor")
+        
+        alertVC.addAction(galleryAction)
+        alertVC.addAction(cameraAction)
+        alertVC.addAction(cancelAction)
+        present(alertVC, animated: true, completion: nil)
+        
+    }
+    
+    func getProfileImageFromCamera(){
+        isSourceCamera = true
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
-        
-        
-        
         //Test Image
         let httpCheckProfile = UserInfo.baseurl ?? ""
         let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
@@ -258,9 +311,24 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
         
         profilePhotoImageView.loadImge(withUrl: imageUrl)
+    }
+    
+    func getProfileImageFromGallary(){
+        isSourceCamera = true
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+        //Test Image
+        let httpCheckProfile = UserInfo.baseurl ?? ""
+        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
+        print(imageUrlString)
+        guard let imageUrl:URL = URL(string: imageUrlString) else {
+                    return
+                }
         
-        
-        
+        profilePhotoImageView.loadImge(withUrl: imageUrl)
     }
     
     func uploadCoverImageToServer(){
@@ -349,11 +417,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if picker.sourceType == .photoLibrary{
+        if(isSourceCamera && picker.sourceType == .photoLibrary){
+            profilePhotoImageView?.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            uploadProfileImageToServer()
+        }
+        
+        else if (picker.sourceType == .photoLibrary){
             coverPhotoImageView?.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
             uploadCoverImageToServer()
         }
-        if picker.sourceType == .camera{
+        else if picker.sourceType == .camera{
             profilePhotoImageView?.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
             uploadProfileImageToServer()
         }
