@@ -9,6 +9,7 @@ target 'YamahaRidersClub' do
   pod 'Alamofire', '~> 5.2'
   pod 'SwiftyJSON', '~> 5.0.0'
   pod 'SDWebImage', '~> 5.0'
+  pod 'GoogleMaps', '~> 4.2.0'
   
 
   target 'YamahaRidersClubTests' do
