@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B00601A266CDA4B00881A63 /* AppSettingVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B006019266CDA4B00881A63 /* AppSettingVariable.swift */; };
 		1B096FD12643F5DC003B07CD /* ForgotPasswordaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */; };
 		1B096FD62646CC42003B07CD /* FBLinkUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */; };
 		1B0BFDBF260540D600939FBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BFDBE260540D500939FBA /* Constants.swift */; };
@@ -105,6 +106,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B006019266CDA4B00881A63 /* AppSettingVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingVariable.swift; sourceTree = "<group>"; };
 		1B096FD02643F5DC003B07CD /* ForgotPasswordaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordaViewController.swift; sourceTree = "<group>"; };
 		1B096FD52646CC41003B07CD /* FBLinkUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLinkUploadModel.swift; sourceTree = "<group>"; };
 		1B0BFDBE260540D500939FBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				1BAA6C3E25FA93D50050EDE0 /* LoginService.swift */,
 				1BF72828261C1DB800A0ED4F /* GeneralUserBikeModelSelection.swift */,
+				1B006019266CDA4B00881A63 /* AppSettingVariable.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				1B1C173A25FA9B67008FF687 /* LoginModel.swift in Sources */,
 				1BF7281F261B306100A0ED4F /* GeneralUserBikeModelDetailsViewController.swift in Sources */,
 				1B1C174625FF281A008FF687 /* MenuViewController.swift in Sources */,
+				1B00601A266CDA4B00881A63 /* AppSettingVariable.swift in Sources */,
 				1B0BFEC926107AD700939FBA /* MyRideTableViewCell.swift in Sources */,
 				1B0BFDC9260658CF00939FBA /* QRScannerViewController.swift in Sources */,
 				1BDFDF4E263E599200D5F975 /* VerificationResponseModel.swift in Sources */,
@@ -959,21 +963,21 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "YamahaRidersClub/YamahaRidersClub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -986,20 +990,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6K6DZHJR9A;
 				INFOPLIST_FILE = YamahaRidersClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.YamahaRidersClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "YamahaRidersClub/YamahaRidersClub-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

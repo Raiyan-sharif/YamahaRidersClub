@@ -614,13 +614,16 @@
                                                     <rect key="frame" x="36" y="243.5" width="342" height="32.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-cE-hgb">
-                                                            <rect key="frame" x="0.0" y="6" width="36.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="6" width="35" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="zjj-lQ-tpp"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YRC Barisal Riding Fiesta 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-6t-cbS">
-                                                            <rect key="frame" x="52.5" y="6" width="289.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YRC Barisal Riding Fiesta 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-6t-cbS">
+                                                            <rect key="frame" x="51" y="6" width="291" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1105,7 +1108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6y-1y-7RB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-895.6521739130435" y="953.57142857142856"/>
+            <point key="canvasLocation" x="-899" y="958"/>
         </scene>
         <!--Sign Up Second View Controller-->
         <scene sceneID="8ir-vZ-Bj6">
@@ -2278,7 +2281,7 @@
                                                     <rect key="frame" x="16" y="8" width="382" height="234"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="eka-Ei-7tt" secondAttribute="height" multiplier="10:5" id="YOg-Hr-tKp"/>
+                                                        <constraint firstAttribute="width" secondItem="eka-Ei-7tt" secondAttribute="height" multiplier="10:7" id="YOg-Hr-tKp"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6at-Lz-z15">
