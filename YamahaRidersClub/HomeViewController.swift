@@ -270,8 +270,24 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         case .NewRider:
 //            NewRideViewController
             let vc = storyboard?.instantiateViewController(withIdentifier: "NewRideViewController" ) as! NewRideViewController
-            self.navigationController?.pushViewController(vc,
-            animated: true)
+            if(AppSettingVariable.isNewRideOn){
+                if let homeVC = AppSettingVariable.homeVc{
+                    
+                    
+                        self.navigationController?.pushViewController(AppSettingVariable.viewControllerNewRide!,
+                                                                     animated: true)
+                    
+                    
+                    }
+                
+                
+            }
+            else{
+                AppSettingVariable.viewControllerNewRide = vc
+                self.navigationController?.pushViewController(vc,
+                            animated: true)
+            }
+            
         case .Logout:
             self.userDefaults.setValue(false, forKey: "isloggedIn")
             self.userDefaults.setValue("", forKey: "mobileno")

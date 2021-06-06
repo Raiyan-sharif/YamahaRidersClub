@@ -141,7 +141,7 @@ extension ProductListDetailViewController: UICollectionViewDelegate, UICollectio
 //        cell.productImage.image = imageList[indexPath.row]
         let urlData = URL(string: imageUrlList[indexPath.row]) ?? URL(string: "http://dashboard.acigroup.info/yca/assets/img/medium/R15%20V3-1.png")!
         print("ok")
-        cell.productImage.loadImge(withUrl: urlData)
+        cell.productImage.downloaded(from: imageUrlList[indexPath.row].replacingOccurrences(of: " ", with: "%20"))
         print(indexPath.row)
         
         return cell

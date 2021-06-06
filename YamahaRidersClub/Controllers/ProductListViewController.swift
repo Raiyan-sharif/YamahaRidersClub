@@ -37,15 +37,17 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         print(urlString)
         let urlData = URL(string: urlString) ?? URL(string: "http://dashboard.acigroup.info/yca/assets/img/medium/R15%20V3-1.png")!
 //        cell?.productImage.loadImge(withUrl: urlData)
-        DispatchQueue.global().async { [weak self] in
-                if let data = try? Data(contentsOf: urlData) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            cell?.productImage.image = image
-                        }
-                    }
-                }
-            }
+        
+        cell?.productImage.downloaded(from: urlString.replacingOccurrences(of: " ", with: "%20"))
+//        DispatchQueue.global().async { [weak self] in
+//                if let data = try? Data(contentsOf: urlData) {
+//                    if let image = UIImage(data: data) {
+//                        DispatchQueue.main.async {
+//                            cell?.productImage.image = image
+//                        }
+//                    }
+//                }
+//            }
         cell?.productName.text = ProductsModel.productInfo[indexPath.row].productName
         
         return cell ?? UITableViewCell()
@@ -56,7 +58,7 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         self.pageNo = 1
         self.success = 1
-        
+        title = "Products"
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -148,4 +150,25 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
 
+}
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleToFill) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleToFill) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
 }

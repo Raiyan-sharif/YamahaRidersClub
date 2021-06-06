@@ -52,20 +52,28 @@ class NewRideViewController: UIViewController{
         if #available(iOS 13.0, *) {
              overrideUserInterfaceStyle = .light
          }
+        title = "New Ride"
         GMSServices.provideAPIKey(googleApiKey)
-        if (CLLocationManager.locationServicesEnabled())
-                {
-                    locationManager = CLLocationManager()
-                    locationManager.delegate = self
-                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                    locationManager.requestWhenInUseAuthorization()
-                    locationManager.startUpdatingLocation()
-            locationManager.allowsBackgroundLocationUpdates = true
-            locationManager.showsBackgroundLocationIndicator = true
-            
-            
+//        if(!AppSettingVariable.isNewRideOn){
+            if (CLLocationManager.locationServicesEnabled())
+                    {
+                        locationManager = CLLocationManager()
+                        locationManager.delegate = self
+                        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                        locationManager.requestWhenInUseAuthorization()
+                        locationManager.startUpdatingLocation()
+                locationManager.allowsBackgroundLocationUpdates = true
+                locationManager.showsBackgroundLocationIndicator = true
+                
+                
+//            }
         }
+        
         mapView.delegate = self
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<Back", style: .plain, target: self, action: #selector(NewRideViewController.backButtonTapped))
+        
+        navigationItem.leftBarButtonItem?.isEnabled = true
         print("viewDidLoad")
         
         
@@ -117,6 +125,7 @@ class NewRideViewController: UIViewController{
             
             startStopBtn.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             startStopBtn.setTitle("Stop", for: .normal)
+            AppSettingVariable.isNewRideOn = true
             
 //            let geoCoder = CLGeocoder()
 //            geoCoder.geocodeAddressString("Mirpur 13") { (placemarks, error) in
@@ -180,6 +189,55 @@ class NewRideViewController: UIViewController{
             dataViaAlamorfire(lastLocation: lastLocation)
         }
     }
+    
+  
+    
+    @objc func backButtonTapped() {
+//        self.navigationController?.popViewController(animated: true)
+        if (AppSettingVariable.isNewRideOn){
+            print("Ride on going")
+            let alertVC = UIAlertController(title: "Warning", message: "Do you want stop the ride now? To Get Back to main menu stop the ride", preferredStyle: .alert)
+            
+
+            
+            
+            let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: {
+                (alert) -> Void in
+                
+                
+                self.dismiss(animated: true, completion: nil)
+                print("Ok")
+            })
+            cancelAction.setValue(UIColor.white, forKey: "titleTextColor")
+            
+            
+            alertVC.addAction(cancelAction)
+            present(alertVC, animated: true, completion: nil)
+            
+//            if let homeVC = AppSettingVariable.homeVc{
+//
+//                self.navigationController?.pushViewController(homeVC, animated: true)
+//
+//                }
+//            else{
+//                let vc2 = storyboard?.instantiateViewController(withIdentifier: "HomeViewController" ) as! HomeViewController
+//                AppSettingVariable.homeVc = vc2
+//                self.navigationController?.pushViewController(vc2, animated: true)
+//            }
+        }
+        else{
+//            if let homeVC = AppSettingVariable.homeVc{
+//                homeVC.dismiss(animated: false) {
+                    self.navigationController?.popViewController(animated: true)
+//                }
+//            }
+            
+            
+        }
+        
+        print("Back Button pressed")
+    }
+    
     func dataViaAlamorfire(lastLocation: CLLocation?) {
         showMapRoute = false
         
@@ -200,6 +258,7 @@ class NewRideViewController: UIViewController{
         
         startStopBtn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         startStopBtn.setTitle("Start", for: .normal)
+        AppSettingVariable.isNewRideOn = false
         locationManager.stopUpdatingLocation()
         self.mapView.removeAnnotation(startAnnotaion)
 //            let dic = ["data" : ["rideDetails": rideDet,"rideCoordinates": rideCode]]
