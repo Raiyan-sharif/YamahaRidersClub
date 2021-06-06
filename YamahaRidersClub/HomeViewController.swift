@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
             return emptyCell ?? UITableViewCell()
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as? ArticleTableViewCell
-        if let urlString = URL(string: (articles?.baseurl ?? "") + (articles?.data[0].imageName ?? "")){
+        if let urlString = URL(string: (articles?.baseurl ?? "") + (articles?.data[indexPath.row].imageName.replacingOccurrences(of: " ", with: "%20") ?? "")){
             cell?.articleImageView.loadImge(withUrl: urlString)
         }
         
@@ -63,6 +63,13 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         cell?.dayOfEvent.text = day
         cell?.articleStartEndDate.text = "\(startDay) - \(endDay)"
         cell?.articleNameLabel.text = articles?.data[indexPath.row].articleName
+        
+        if articles?.data[indexPath.row].eventLocation?.count ?? 0 < 2{
+            
+            cell?.imageOfLocation.isHidden = true
+            
+        }
+        
         cell?.eventLocation.text = articles?.data[indexPath.row].eventLocation
         cell?.eventDetailsInfoLabel.text = articles?.data[indexPath.row].eventDetailsInfo
         cell?.articleAuthor.text = articles?.data[indexPath.row].authorBy

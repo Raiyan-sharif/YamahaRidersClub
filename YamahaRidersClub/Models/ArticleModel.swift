@@ -20,7 +20,8 @@ struct ArticleModelDatum: Codable {
     let articleID, articleStartDate, sl, isVideo: String
     let eventOrganizedBy: String
     let youtubeVideoLink: String
-    let eventLocation, authorBy, articleName, imageName: String
+    let eventLocation:String?
+    let authorBy, articleName, imageName: String
     let articleCategoryName, isImage, eventLocationLattitude, imageCount: String
     let articleEndDate, eventLocationLongatude, eventDetailsInfo: String
 

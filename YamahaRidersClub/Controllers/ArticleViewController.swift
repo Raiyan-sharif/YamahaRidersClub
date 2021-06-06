@@ -34,7 +34,7 @@ class ArticleViewController: UITableViewController {
 //        cell.articleNameLabel.text = "Hello"
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell") as! ArticleTableViewCell
 //        let imageUrlString = httpCheckProfile + (UserInfo.picture ?? "")
-        let stringURL = "\(eventModel.baseurl ?? "")\(eventModel.data[indexPath.row].imageName ?? "")"
+        let stringURL = "\(eventModel.baseurl ?? "")\(eventModel.data[indexPath.row].imageName?.replacingOccurrences(of: " ", with: "%20") ?? "")"
 //        print(stringURL)
 //        let imageUrl:URL = URL(string:stringURL)!
 //        let image = UIImageView()

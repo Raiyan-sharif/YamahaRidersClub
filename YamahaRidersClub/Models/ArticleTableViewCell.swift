@@ -18,6 +18,7 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var youtubeVideoLinkBtn: UIButton!
     @IBOutlet weak var eventDetailsInfoLabel: UILabel!
     @IBOutlet weak var articleAuthor: UILabel!
+    @IBOutlet weak var imageOfLocation: UIImageView!
     var urlOfYouTube: String!
     
     @IBAction func youtubeButtonOnPress(_ sender: Any) {

@@ -671,11 +671,13 @@
                                                 <stackView opaque="NO" contentMode="left" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qSt-7Y-mub">
                                                     <rect key="frame" x="36" y="346" width="342" height="25.5"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-aT-Md0">
-                                                            <rect key="frame" x="0.0" y="1" width="25" height="24"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-aT-Md0">
+                                                            <rect key="frame" x="0.0" y="1.5" width="25" height="24"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" red="0.81279430649999995" green="0.13950128419999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="MRt-HL-0Fh"/>
                                                                 <constraint firstAttribute="width" constant="25" id="a0r-Oz-8Jw"/>
-                                                                <constraint firstAttribute="width" secondItem="xRi-aT-Md0" secondAttribute="height" multiplier="1:1" id="q0Z-eM-5ye"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chittagong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9X-zP-96a">
@@ -703,7 +705,7 @@
                                                         <constraint firstAttribute="height" constant="2" id="MaE-RJ-F8O"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This time we will be gathering with all the yamaha Bikers at Barisal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-sq-3wW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This time we will be gathering with all the yamaha Bikers at Barisal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-sq-3wW">
                                                     <rect key="frame" x="36" y="417" width="342" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -751,6 +753,7 @@
                                             <outlet property="dayOfEvent" destination="Gvy-ix-vbL" id="e4Q-N6-l9o"/>
                                             <outlet property="eventDetailsInfoLabel" destination="lgR-sq-3wW" id="nwc-Vj-1ei"/>
                                             <outlet property="eventLocation" destination="D9X-zP-96a" id="A2r-5B-xFb"/>
+                                            <outlet property="imageOfLocation" destination="xRi-aT-Md0" id="UZp-Ll-k5O"/>
                                             <outlet property="monthOfEvent" destination="VAh-cE-hgb" id="nr0-Pq-mNo"/>
                                             <outlet property="youtubeVideoLinkBtn" destination="DY0-8N-4Os" id="Mww-nC-p2N"/>
                                         </connections>
@@ -2054,11 +2057,12 @@
                                         <stackView opaque="NO" contentMode="left" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-i7-ENE">
                                             <rect key="frame" x="36" y="346" width="342" height="25.5"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="z7N-tO-Ie2">
-                                                    <rect key="frame" x="0.0" y="1" width="25" height="24"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_marker.png" translatesAutoresizingMaskIntoConstraints="NO" id="z7N-tO-Ie2">
+                                                    <rect key="frame" x="0.0" y="0.5" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="KP3-M6-y3y"/>
                                                         <constraint firstAttribute="width" secondItem="z7N-tO-Ie2" secondAttribute="height" multiplier="1:1" id="Ndu-BP-Dg9"/>
+                                                        <constraint firstAttribute="height" constant="25" id="zR1-eW-ePS"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barisal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qw-7K-9YG">
@@ -2083,7 +2087,7 @@
                                                 <constraint firstAttribute="height" constant="2" id="cQI-Ye-WsM"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This time we will be gathering with all the yamaha Bikers at Barisal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAI-Qe-IAH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This time we will be gathering with all the yamaha Bikers at Barisal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAI-Qe-IAH">
                                             <rect key="frame" x="36" y="417" width="342" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3207,9 +3211,11 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="default_marker.png" width="26" height="41"/>
         <image name="ic_icon" width="100" height="32"/>
         <image name="ic_launcher" width="48" height="48"/>
         <image name="ic_launcher_round" width="48" height="48"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="no_data" width="100" height="100"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="play" catalog="system" width="120" height="128"/>
