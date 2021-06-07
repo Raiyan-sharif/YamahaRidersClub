@@ -27,16 +27,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Need Access to Location to Get Weather data for you location and Track Coordinate if ride is Tapped to Start.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Need Camera Permission To Grap Profile Picture</string>
+	<string>Need Camera Permission To Grab/change Profile Picture</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Need Access to Location</string>
+	<string>Need Access to Location to Get Weather data for you location and Track Coordinate if ride is Tapped to Start.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need Access to Location</string>
+	<string>Need Access to Location to Get Weather data for you location and Track Coordinate if ride is Tapped to Start.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need you location to get the current weather for your location</string>
+	<string>We need you location to get the current weather for your location and also Track Location if you open New Ride to show current position on Map </string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need to Access Your Gallery</string>
+	<string>Need to Access Your Gallery for changing/ setting Profile Image and/or Cover Image</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

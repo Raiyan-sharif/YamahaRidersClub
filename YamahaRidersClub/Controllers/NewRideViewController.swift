@@ -12,6 +12,7 @@ import AVFoundation
 import Alamofire
 import SwiftyJSON
 import GoogleMaps
+import AppTrackingTransparency
 //import GooglePlaces
 //CLLocationManagerDelegate
 class NewRideViewController: UIViewController{
@@ -68,6 +69,9 @@ class NewRideViewController: UIViewController{
                 
 //            }
         }
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            
+          })
         
         mapView.delegate = self
         
